@@ -27,18 +27,18 @@
                             <img src="./img/btn_cal_off_blue.png" alt="다이렉트 보험료 계산이미지">
                         </button>
                         <ul>
-                            <li>하나 에코플러스(다이렉트) 자동차보험
+                            <li class="direct_type1">하나 에코플러스(다이렉트) 자동차보험
                                 <span>마이플랜으로 최대 <span class="red">50%</span>미리 할인</span>
                             </li>
-                            <li>
+                            <li class="direct_type2">
                                 하나 가득담은 운전자보험(다이렉트)
                                 <span>운전자의 배상 책임과 비용 손해를 집중 보장</span>
                             </li>
-                            <li>
+                            <li class="direct_type3">
                                 하나 국내여행보험
                                 <span>5인 이상의 학교,법인등 단체가입 가능</span>
                             </li>
-                            <li>
+                            <li class="direct_type4">
                                 중고차딜러보험
                                 <span>중고자동차 매매에 대한 경제적 손실을 보장</span>
                             </li>
@@ -372,30 +372,80 @@
                         </li>
                     </ul>
                     <div class="search_box">
-                        <button>
+                        <button class="search_btn">
                             <img src="./img/main_search.png" alt="검색아이콘">
                         </button>
-                        <form action="#" method="get">
-                            <fieldset>
-                                <input type="text" placeholder="검색어를 입력해주세요">
-                                <button></button>
-                            </fieldset>
-                        </form>
+                        <div class="detail_search_box">
+                            <form action="#" method="get">
+                                <fieldset>
+                                    <input type="text" placeholder="검색어를 입력해주세요">
+                                    <button></button>
+                                </fieldset>
+                            </form>
+                            <div class="issue_list">
+                                <strong>인기검색어</strong>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class="num">1</span>
+                                            단기운전자확대
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="num">2</span>
+                                            내가 가입한 보험 확인
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="num">3</span>
+                                            자동차보험 담보·특약 변경
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="num">4</span>
+                                            하나 해외여행보험
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="num">5</span>
+                                            하나 에코플러스 자동차보험
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+                    <button class="all_nav_btn">
+                        <img src="./img/all_menu_icon.png" alt="메뉴아이콘">
+                    </button>
                     <!--------------------------- popup_menu ------------------------->
                     <div  class="popup_menu">
-                        <button>
-                            <img src="./img/all_menu_icon.png" alt="메뉴아이콘">
-                        </button>
-                        <h2>전체메뉴 보기</h2>
-                        <ul class="depth1">
-                            <li>
-                                보험상품
-                                <h2>보험상품</h2>
-                                <ul class="depth2">
+                        <div class="menu_tab">
+                            <h2>전체메뉴 보기</h2>
+                            <u class="all_menu_list">
+                                <li><a href="#" class="active">보험상품</a></li>
+                                <li><a href="#">혜택</a></li>
+                                <li><a href="#">보상</a></li>
+                                <li><a href="#">마이페이지</a></li>
+                                <li><a href="#">고객센터</a></li>
+                                <li><a href="#">회사소개</a></li>
+                                <li><a href="#">공시실</a></li>
+                                <li><a href="#">소비자보호</a></li>
+                                <li><a href="#">약관 및 정책</a></li>
+                                <li><a href="#">제휴문의</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu_depth">
+                            <div>
+                                <h3>보험상품</h3>
+                                <ul class="depth1">
                                     <li>
                                         <a href="#">자동차보험</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">하나 에코플러스(다이렉트) 자동차보험</a></li>
                                             <li><a href="#">하나 가득담은 운전자보험(다이렉트)</a></li>
                                             <li><a href="#">하나 가득담은 운전자보험</a></li>
@@ -403,7 +453,7 @@
                                     </li>
                                     <li>
                                         <a href="#">건강보험</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">하나 가득담은 암보험</a></li>
                                             <li><a href="#">하나 가득담은 치아보험(다이렉트)</a></li>
                                             <li><a href="#">하나 가득담은 치아보험</a></li>
@@ -418,7 +468,7 @@
                                     </li>
                                     <li>
                                         <a href="#">생활보험</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">하나 슬기로운 자녀생활보험</a></li>
                                             <li><a href="#">하나 해외여행보험</a></li>
                                             <li><a href="#">하나 해외유학/장기체류보험</a></li>
@@ -429,7 +479,7 @@
                                     </li>
                                     <li>
                                         <a href="#">원데이보험</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">원데이자동차®보험</a></li>
                                             <li><a href="#">원데이 운전자보험</a></li>
                                             <li><a href="#">원데이 레저보험(Ⅱ)</a></li>
@@ -438,35 +488,34 @@
                                     </li>
                                     <li>
                                         <a href="#">기타·기업보험</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">중고차딜러</a></li>
                                             <li><a href="#">하나 맹견배상책임보험</a></li>
                                             <li><a href="#">하나 국내여행보험(단체형)</a></li>
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                혜택
-                                <h2>혜택</h2>
-                                <ul class="depth2">
+                            </div>
+                            <div>
+                                <h3>혜택</h3>
+                                <ul class="depth1">
                                     <li>
                                         <a href="#">이벤트</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">진행중이벤트</a></li>
                                             <li><a href="#">당첨자발표</a></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="#">카드 혜택</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">제휴카드</a></li>
                                             <li><a href="#">무이자할부</a></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="#">멤버십서비스</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">SpeedMate 정비쿠폰</a></li>
                                             <li><a href="#">배터리 할인</a></li>
                                             <li><a href="#">카케어(스팀세차)</a></li>
@@ -474,10 +523,10 @@
                                     </li>
                                     <li>
                                         <a href="#">부가서비스</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li>
                                                 <a href="#">생활서비스</a>
-                                                <ul class="depth4">
+                                                <ul class="depth3">
                                                     <li><a href="#">품격상조 예다함 할인</a></li>
                                                     <li><a href="#">소피아그린CC 할인</a></li>
                                                     <li><a href="#">무료 법률상담</a></li>
@@ -486,19 +535,19 @@
                                             </li>
                                             <li>
                                                 <a href="#">여성서비스</a>
-                                                <ul class="depth4">
+                                                <ul class="depth3">
                                                     <li><a href="#">해피케어 산후조리 서비스 할인</a></li>
                                                 </ul>
                                             </li>
                                             <li>
                                                 <a href="#">여행서비스</a>
-                                                <ul class="depth4">
+                                                <ul class="depth3">
                                                     <li><a href="#">특급호텔 60% 할인</a></li>
                                                 </ul>
                                             </li>
                                             <li>
                                                 <a href="#">금융서비스</a>
-                                                <ul class="depth4">
+                                                <ul class="depth3">
                                                     <li><a href="#">에듀카 정기적금 금리우대</a></li>
                                                 </ul>
                                             </li>
@@ -506,20 +555,18 @@
                                     </li>
                                     <li>
                                         <a href="#">교직원 특화서비스</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">여행할인</a></li>
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
-                            </li>
-                            <li>
-                                보상
-                                <h2>보상</h2>
-                                <ul class="depth2">
+                            </div>
+                            <div>
+                                <h3>보상</h3>
+                                <ul class="depth1">
                                     <li>
                                         <a href="#">자동차보상</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">보상처리절차</a></li>
                                             <li><a href="#">보상서류안내</a></li>
                                             <li><a href="#">사고접수</a></li>
@@ -530,7 +577,7 @@
                                     </li>
                                     <li>
                                         <a href="#">상해·건강보상</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">보상처리절차</a></li>
                                             <li><a href="#">보상서류안내</a></li>
                                             <li><a href="#">보험금청구</a></li>
@@ -540,7 +587,7 @@
                                     </li>
                                     <li>
                                         <a href="#">보상서비스</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">긴급출동</a></li>
                                             <li><a href="#">차량등록/관리팁</a></li>
                                             <li><a href="#">정기점검대행</a></li>
@@ -550,7 +597,7 @@
                                     </li>
                                     <li>
                                         <a href="#">보상가이드</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">교통사고처리절차</a></li>
                                             <li><a href="#">뺑소니/무보험보상</a></li>
                                             <li><a href="#">자동차간접손해보험금</a></li>
@@ -562,19 +609,18 @@
                                     </li>
                                     <li>
                                         <a href="#">보상센터안내</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">병원/정비공장</a></li>
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                마이페이지
-                                <h2>마이페이지</h2>
-                                <ul class="depth2">
+                            </div>
+                            <div>
+                                <h3>마이페이지</h3>
+                                <ul class="depth1">
                                     <li>
                                         <a href="#">내 정보·계약확인</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">보험계약 확인</a></li>
                                             <li><a href="#">계약고객 정보변경</a></li>
                                             <li><a href="#">내 정보 확인·변경</a></li>
@@ -584,7 +630,7 @@
                                     </li>
                                     <li>
                                         <a href="#">자동차보험 계약관리</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">자도차보험 사진등록</a></li>
                                             <li><a href="#">마일리지 사진등록·조회</a></li>
                                             <li><a href="#">특약·관련서류 등록</a></li>
@@ -594,7 +640,7 @@
                                     </li>
                                     <li>
                                         <a href="#">장기보험 계약관리</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">장기 갱신보험료 조회</a></li>
                                             <li><a href="#">장기 연금예시 조회</a></li>
                                             <li><a href="#">청약철회 조회</a></li>
@@ -609,7 +655,7 @@
                                     </li>
                                     <li>
                                         <a href="#">자동차보험 계약변경</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">자동차보험 확정/변경</a></li>
                                             <li><a href="#">자동차교체(차량대체)</a></li>
                                             <li><a href="#">부속품 추가/삭제</a></li>
@@ -622,7 +668,7 @@
                                     </li>
                                     <li>
                                         <a href="#">납입・환급</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">보험료 납입</a></li>
                                             <li><a href="#">효력상실 예정계약 보험료 납입</a></li>
                                             <li><a href="#">자동이체계좌 신청/변경</a></li>
@@ -634,7 +680,7 @@
                                     </li>
                                     <li>
                                         <a href="#">증명서</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">보험증권</a></li>
                                             <li><a href="#">가입증명서</a></li>
                                             <li><a href="#">보험료납입증명서</a></li>
@@ -645,20 +691,19 @@
                                     </li>
                                     <li>
                                         <a href="#">장기보험 증명서</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">수납확인서</a></li>
                                             <li><a href="#">환급금 산출내역서</a></li>
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                고객센터
-                                <h2>고객센터</h2>
-                                <ul class="depth2">
+                            </div>
+                            <div>
+                                <h3>고객센터</h3>
+                                <ul class="depth1">
                                     <li>
                                         <a href="#">홈페이지 이용안내</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">고객센터/ARS</a></li>
                                             <li><a href="#">보험료계산</a></li>
                                             <li><a href="#">보험용어사전</a></li>
@@ -667,7 +712,7 @@
                                     </li>
                                     <li>
                                         <a href="#">상담문의</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">자주묻는질문</a></li>
                                             <li><a href="#">이메일상담</a></li>
                                             <li><a href="#">1:1채팅상담</a></li>
@@ -680,7 +725,7 @@
                                     </li>
                                     <li>
                                         <a href="#">로그인센터</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">로그인</a></li>
                                             <li><a href="#">회원가입</a></li>
                                             <li><a href="#">회원탈퇴</a></li>
@@ -689,7 +734,7 @@
                                     </li>
                                     <li>
                                         <a href="#">보험제도・신고</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">과오납보험료환급</a></li>
                                             <li><a href="#">보험사기환급제도</a></li>
                                             <li><a href="#">내보험찾아줌</a></li>
@@ -702,27 +747,26 @@
                                     </li>
                                     <li>
                                         <a href="#">모바일 서비스</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">하나손해보험앱</a></li>
                                             <li><a href="#">원데이보험앱</a></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="#">인증센터</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">공동인증서 등록/해제</a></li>
                                             <li><a href="#">공동인증서 복사</a></li>
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                회사소개
-                                <h2>회사소개</h2>
-                                <ul class="depth2">
+                            </div>
+                            <div>
+                                <h3>회사소개</h3>
+                                <ul class="depth1">
                                     <li>
                                         <a href="#">하나손해보험</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">CEO소개</a></li>
                                             <li><a href="#">회사개요/연혁</a></li>
                                             <li><a href="#">비전과 미션</a></li>
@@ -731,25 +775,24 @@
                                     </li>
                                     <li>
                                         <a href="#">사회공헌</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">사회공헌공시</a></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="#">입찰공고</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">입찰공고</a></li>
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                공시실
-                                <h2>공시실</h2>
-                                <ul class="depth2">
+                            </div>
+                            <div>
+                                <h3>공시실</h3>
+                                <ul class="depth1">
                                     <li>
                                         <a href="#">경영공시</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">정기경영</a></li>
                                             <li><a href="#">수시경영</a></li>
                                             <li><a href="#">지배구조</a></li>
@@ -758,7 +801,7 @@
                                     </li>
                                     <li>
                                         <a href="#">상품공시</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">공시이용안내</a></li>
                                             <li><a href="#">보험안내서</a></li>
                                             <li><a href="#">상품목록</a></li>
@@ -779,14 +822,13 @@
                                         <a href="#">자동차보험공시</a>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                소비자보호
-                                <h2>소비자보호</h2>
-                                <ul class="depth2">
+                            </div>
+                            <div>
+                                <h3>소비자보호</h3>
+                                <ul class="depth1">
                                     <li>
                                         <a href="#">소비자보호</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">금융소비자보호체계</a></li>
                                             <li><a href="#">소비자보호우수사례</a></li>
                                             <li><a href="#">민원공시</a></li>
@@ -799,19 +841,18 @@
                                     </li>
                                     <li>
                                         <a href="#">신용정보조회</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">개인정보동의현황/철회</a></li>
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                약관 및 정책
-                                <h2>약관 및 정책</h2>
-                                <ul class="depth2">
+                            </div>
+                            <div>
+                                <h3>약관 및 정책</h3>
+                                <ul class="depth1">
                                     <li>
                                         <a href="#">약관</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">온라인서비스 통합회원가입 이용약관</a></li>
                                             <li><a href="#">개인정보처리방침(개인정보법)</a></li>
                                             <li><a href="#">위치기반서비스이용약관</a></li>
@@ -824,21 +865,20 @@
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                제휴문의
-                                <h2>제휴문의</h2>
-                                <ul class="depth2">
+                            </div>
+                            <div>
+                                <h3>제휴문의</h3>
+                                <ul class="depth1">
                                     <li>
                                         <a href="#">제휴문의</a>
-                                        <ul class="depth3">
+                                        <ul class="depth2">
                                             <li><a href="#">제휴문의</a></li>
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
-                        </ul>
-                        <button>
+                            </div>
+                        </div>
+                        <button class="close_btn">
                             <img src="./img/btn_close.gif" alt="팝업닫기 버튼아이콘">
                         </button>
                     </div>
@@ -989,17 +1029,21 @@
                     </li>
                     <li class="right_box">
                         <h3>고객상담센터</h3>
-                        <span>평일09:00 ~ 18:00</span>
-                        <ul>
-                            <li>다이렉트자동차보험<span>1644-7725</span></li>
-                            <li>대출전문상담센터<span> 1670-0393</span></li>
-                            <li>장기보험 상담센터<span>0808-666-888  (무료)</span></li>
-                            <li>이륜차보험 상담센터<span>1644-3226</span></li>
-                        </ul>
+                    <span>평일09:00 ~ 18:00</span>
+                        <dl>
+                            <dt>다이렉트자동차보험</dt>
+                            <dd>1644-7725</dd>
+                            <dt>대출전문상담센터</dt>
+                            <dd> 1670-0393</dd>
+                            <dt>장기보험 상담센터</dt>
+                            <dd>0808-666-888  (무료)</dd>
+                            <dt>이륜차보험 상담센터</dt>
+                            <dd>1644-3226</dd>
+                        </dl>
                     </li>
                 </ul>
                 <div class="last_banner">
-                    <ul class="gallery_list">
+                <ul class="gallery_list">
                         <li><img src="./img/banner1_.jpg" alt="원데이 자동차 보험 이미지"></li>
                         <li><img src="./img/banner2_.jpg" alt="자동차보험 나눔특약 이미지"></li>
                         <li><img src="./img/banner3_.jpg" alt="수화보험상담"></li>
@@ -1027,6 +1071,7 @@
                     <li><a href="#">보호금융상품등록부</a></li>
                     <li class="blue"><a href="#">개인정보처리방침</a></li>
                     <li class="add_list">
+                        <button>약관 및 정책</button>
                         <ul>
                             <li><a href="#">온라인서비스통합회원가입이용약관</a></li>
                             <li><a href="#">위치기반서비스이용약관</a></li>
@@ -1040,6 +1085,7 @@
                         </ul>
                     </li>
                     <li class="add_list">
+                        <button>패밀리 사이트</button>
                         <ul>
                             <li><a href="#">하나금융그룹</a></li>
                             <li><a href="#">하나은행</a></li>
@@ -1075,9 +1121,9 @@
                     </li>
                 </ul>
                 <div class="under_box">
-                    <h2>
+                    <a href="#" class="footer_logo">
                         <img src="./img/img_logo2.png" alt="하나손해보험 로고 이미지">
-                    </h2>
+                    </a>
                     <address>
                         <ul>
                             <li>하나손해보험주식회사</li>
