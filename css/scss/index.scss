@@ -1,1 +1,459 @@
 @import "common";
+
+.inner{
+  width: 1250px;
+  margin: auto;
+}
+
+header{
+  position: relative;
+  .inner{
+    // ---------------------    sub_nav   (S)    -------------------------
+    .sub_nav{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      height: 38px;
+      > li{
+        position: relative;
+        height: 28px;
+        &:not(:first-child):after{
+          content: "";
+          position: absolute;
+          top: 10px;
+          width: 1px;
+          height: 8px;
+          background-color: #a3a3a3;
+        }
+        a{
+          display: flex;
+          align-items: center;
+          height: 100%;
+          padding: 0 10px;
+          color: #767676;
+          font-size: 1.5rem;
+          &:hover{
+            color: #28b2a5;
+          }
+        }
+      }
+      .direct_box{
+        margin:0 5px 0 30px;
+        button{
+          display: flex;
+          align-items: center;
+          border: none;
+          background-color: transparent;
+        }
+        // ------다이렉트보험 클릭시 팝업창 (S)-----
+        &::before{
+          content: "";
+          display: none; //block으로 바뀌어야함
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0,0,0,0.5);
+          z-index: 1000;
+        }
+        ul{
+          display: none; //block으로 바뀌어야함
+          position: absolute;
+          top: 33px;
+          right: 5px;
+          width: 410px;
+          padding: 11px 15px 10px;
+          border: 2px solid #009090;
+          background-color: #fff;
+          z-index: 2000;
+          li{
+            padding: 19px 20px 20px 85px;
+            background: no-repeat left 20px center/45px;
+            &:not(:last-child){
+              border-bottom: 1px dashed #ddd;
+            }
+            a{
+              font-size: 1.8rem;
+              color: #555;
+              font-weight: 500;
+              letter-spacing: -0.05em;
+              &:hover{
+                text-decoration: underline;
+              }
+              span{
+                font-size: 1.4rem;
+                color: #767676;
+                .red{
+                  color: #ed1651;
+                }
+              }
+            }
+          }
+          .direct_type1{
+            background-image: url(../../assets/img/icon_go1.png); 
+          }
+          .direct_type2{
+            background-image: url(../../assets/img/icon_go2.png); 
+          }
+          .direct_type3{
+            background-image: url(../../assets/img/icon_go3.png); 
+          }
+          .direct_type4{
+            background-image: url(../../assets/img/icon_go5.png); 
+          }
+          // ------다이렉트보험 클릭시 팝업창 (E)-----
+        }
+      }
+    }
+// ---------------------    sub_nav   (E)    -------------------------
+// ---------------------    nav   (S)    -------------------------
+    nav{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      h1{
+        flex-grow: 4;
+      }
+      > .depth1{
+        display: flex;
+        align-items: center;
+        > li{
+          display: flex;
+          align-items: center;
+          height: 70px;
+          > a{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            margin: 0 12px;
+            padding: 20px 18px 19px;
+            color: #333;
+            font-size: 2.1rem;
+            font-weight: 600;
+            &:hover{
+              color: #009591;
+            }
+          }
+          // -------드롭다운메뉴 (S)-----
+          &:hover .dropdown_menu{
+            display: block;
+          }
+          .dropdown_menu{
+            display:none;
+            position: absolute;
+              top: 100px;
+              left: 0;
+              right: 0;
+              height: 459px;
+              border-top:1px solid #ddd ;
+              border-bottom: 2px solid #009591;
+              background-color: #f9fbfa;
+            .depth2{
+              display: flex;
+              justify-content: space-between;
+              width: 1250px;
+              margin: auto;
+              h2{
+                width: 255px;
+                padding: 25px 0;
+                font-size: 2.2rem;
+                font-weight: 400;
+                color: #333;
+                background: no-repeat top center/100%;
+                text-align: left;
+                span{
+                  display: block;
+                  padding: 10px 0;
+                  font-size: 1.4rem;
+                  font-weight: 400;
+                  color: #767676;
+                  line-height: 24px;
+                }
+              }
+              .dropdown_img1{
+                background-image: url(../../assets/img/img_navBg1.jpg);
+              }
+              .dropdown_img2{
+                background-image: url(../../assets/img/img_navBg2.jpg);
+              }
+              .dropdown_img3{
+                background-image: url(../../assets/img/img_navBg3.jpg);
+              }
+              .dropdown_img4{
+                background-image: url(../../assets/img/img_navBg4.jpg);
+              }
+              .dropdown_img5{
+                background-image: url(../../assets/img/img_navBg5.jpg);
+              }
+              > li{
+                flex-grow: 1;
+                height: 455px;
+                padding: 25px 10px;
+                transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+                &:hover{
+                  background-color: #e9f7f7;
+                  border-left: 1px solid #ddd;
+                  border-right: 1px solid #ddd;
+                }
+                > a{
+                  display: inline-block;
+                  padding: 5px 0;
+                  font-size: 1.6rem;
+                  font-weight: 500;
+                  color: #555;
+                  letter-spacing: -1px;
+                }
+                .depth3{
+                  padding: 10px 0;
+                  li{
+                    padding: 5px 0;
+                    a{
+                      display: inline-block;
+                      font-size: 1.4rem;
+                      color: #555;
+                      letter-spacing: -1.5px;
+                      &:hover{
+                        color: #009591;
+                        text-decoration: underline;
+                      }
+                    }
+                  }
+                }
+                // -------드롭다운메뉴 (E)-----
+              }
+            }
+          }
+        }
+      }
+      .search_box{
+        position: relative;
+        .search_btn{
+          display: flex;
+          align-items: center;
+          margin: 0 30px;
+          border: none;
+          background-color: transparent;
+        }
+        // --------검색창 클릭시 (S)---------------
+        &::before{
+          content: "";
+          display: none; //block으로 바뀌어야함
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0,0,0,0.5);
+          z-index: 1000;
+        }
+        .detail_search_box{
+          display: none; //block으로 바뀌어야함
+          position: absolute;
+          top: 40px;
+          right: 30px;
+          width: 612px;
+          height: 600px;
+          padding: 0 0 90px;
+          font-size: 1.4rem;
+          color: #555;
+          border-radius: 10px;
+          background-color: #f9f9fb;
+          z-index: 2000;
+          form{
+            height: 70px;
+            background-color: #fff;
+            border-radius: 10px 10px 0 0;
+            fieldset{
+              display: flex;
+              justify-content: space-between;
+              border: none;
+              border-bottom: 1px solid #009591;
+              input{
+                padding: 10px 30px;
+                width: 507px;
+                height: 70px;
+                font-size: 2rem;
+                font-weight: 400;
+                color: #333;
+                border: none;
+                border-radius: 10px 0 0;
+                appearance: none;
+                letter-spacing: -0.05em;
+              }
+              button{
+                width: 70px;
+                height: 70px;
+                border: none;
+                background: transparent url(../../assets/img/main_search.png) no-repeat right 30px center/ 30px;
+              }
+            }
+          }
+          .issue_list{
+            padding: 40px 30px 0;
+            strong{
+              font-size: 2rem;
+              color: #333;
+            }
+            ul{
+              margin: 26px 0 0;
+              li{
+                margin: 0 0 18px;
+                .num{
+                  margin: 0 11px 0 0;
+                  font-size: 1.8rem;
+                  color: #009591;
+                }
+                a{
+                  font-size: 1.8rem;
+                  color: #555;
+                  letter-spacing: -0.05em;
+                  &:hover{
+                    color: #009591;
+                    text-decoration: underline;
+                    text-underline-position: under;
+                  }
+                }
+              }
+            }
+          }
+        }
+        // --------검색창 클릭시 (E)---------------
+      }
+      .all_nav_btn{
+        display: flex;
+        align-items: center;
+        border: none;
+        background-color: transparent;
+      }
+      // ---------팝업메뉴 클릭시(S)----------------
+      &::before{
+        content: "";
+        display: none; //block으로 바뀌어야함
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1000;
+      }
+      .popup_menu{
+        display: none; //flex으로 바뀌어야함
+        position: absolute;
+        top: 130px;
+        left: 450px;
+        z-index: 2000;
+        .menu_tab{
+          width: 200px;
+          height: 710px;
+          padding: 20px 0 148px;
+          background-color: #e5f4f4;
+          h2{
+            padding-left: 37px;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #009591;
+            line-height: 52px;
+          }
+          .all_menu_list{
+            li{
+              position: relative;
+              height: 48px;
+              margin-bottom: 1px;
+              a{
+                display: block;
+                position: absolute;
+                left: 20px;
+                width: 180px;
+                height: 48px;
+                padding-left: 17px;
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: #333;
+                line-height: 48px;
+                &:hover{
+                  width: 200px;
+                  color: #fff;
+                  background-color: #009591;
+                  text-decoration: underline;
+                }
+              }
+              .active{
+                width: 200px;
+                color: #fff;
+                background-color: #009591;
+              }
+            }
+          }
+        }
+        .menu_depth{
+          div{
+            display: none;
+            width: 824px;
+            height: 710px;
+            padding: 15px 40px 0 57px;
+            background-color: #fff;
+            h3{
+              font-size: 2.2rem;
+              font-weight: 500;
+              color: #333;
+              line-height: 52px;
+              border-bottom: 2px solid #555;
+            }
+            .depth1{
+              display: flex;
+              flex-wrap: wrap;
+              li{
+                width: 242px;
+                > a{
+                  display: block;
+                  margin: 7px 0 5px;
+                  font-size: 1.8rem;
+                  font-weight: 500;
+                  color: #333;
+                  line-height: 39px;
+                  &:hover{
+                    color: #009591;
+                    text-decoration: underline;
+                  }
+                }
+                .depth2{
+                  li{
+                    a{
+                      display: flex;
+                      align-items: center;
+                      height: 14px;
+                      padding: 5px 0 11.5px;
+                      font-size: 1.4rem;
+                      font-weight: 400;
+                      color: #555;
+                      &:hover{
+                        color: #009591;
+                        text-decoration: underline;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .popup_menu01{
+            display: block;
+          }
+        }
+        .close_btn{
+          position: absolute;
+          top: 0;
+          right: 0;
+          border: none;
+          background-color: transparent;
+        }
+      }
+    }
+    // ---------팝업메뉴 클릭시(E)----------------
+  }
+}
+// ---------------------    nav   (E)    -------------------------
