@@ -9,6 +9,9 @@
 
 html, body {
   font-size: 62.5%;
+  font-weight: 400;
+  color: #555;
+  letter-spacing: -0.5px;
   font-family: "NotoSansKR", "sans-serif";
   letter-spacing: -0.5px;
 }
@@ -1092,4 +1095,159 @@ main .inner .num_box .last_banner .control_box .counter {
 }
 main .inner .num_box .last_banner .control_box .counter .count {
   color: #fff;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 245px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f9f9fb;
+}
+footer .inner .top_box {
+  display: flex;
+}
+footer .inner .top_box > li {
+  position: relative;
+  width: 12.2%;
+  height: 50px;
+  border-left: 1px solid #e5e5e5;
+}
+footer .inner .top_box > li > a {
+  display: block;
+  padding: 15px 0 15px 20px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #555;
+}
+footer .inner .top_box > li > a:hover {
+  text-decoration: underline;
+}
+footer .inner .top_box .blue {
+  width: 14.2%;
+}
+footer .inner .top_box .blue a {
+  color: #009591;
+}
+footer .inner .top_box .add_list {
+  width: 17.2%;
+}
+footer .inner .top_box .add_list button {
+  width: 100%;
+  padding: 15px 0 15px 20px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #555;
+  border: none;
+  background: transparent url(../../assets/img/icon_selectDown2.png) no-repeat right center;
+  text-align: left;
+}
+footer .inner .top_box .add_list button:hover {
+  text-decoration: underline;
+}
+footer .inner .top_box .add_list > ul {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  left: -1px;
+  width: calc(100% + 2px);
+  border: 1px solid #e5e5e5;
+  z-index: 100;
+  background-color: #f6f9fe;
+}
+footer .inner .top_box .add_list > ul > li {
+  padding: 5px 10px;
+}
+footer .inner .top_box .add_list > ul > li > a {
+  font-size: 1.3rem;
+  color: #555;
+  letter-spacing: -0.1px;
+}
+footer .inner .top_box .add_list > ul > li > a:hover {
+  text-decoration: underline;
+}
+footer .inner .top_box .two_list {
+  width: 15.8%;
+}
+footer .inner .top_box .footer_slider {
+  width: 16.2%;
+  border-right: 1px solid #e5e5e5;
+}
+footer .inner .top_box .footer_slider > ul {
+  display: flex;
+  overflow: hidden;
+}
+footer .inner .top_box::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e5e5e5;
+}
+footer .inner .under_box {
+  display: flex;
+}
+footer .inner .under_box .footer_logo {
+  display: block;
+  width: 224px;
+  height: 39px;
+  padding-top: 36px;
+}
+footer .inner .under_box address {
+  width: calc(100% - 544px);
+  height: 89px;
+  padding-top: 24px;
+  font-style: normal;
+}
+footer .inner .under_box address > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .inner .under_box address > ul > li {
+  position: relative;
+  height: 24px;
+  padding-right: 26px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #555;
+}
+footer .inner .under_box address > ul .right_line::after {
+  content: "|";
+  position: absolute;
+  top: 2px;
+  right: 12px;
+  font-size: 1rem;
+}
+footer .inner .under_box > ul {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 30px;
+  width: 320px;
+  height: 89px;
+}
+footer .inner .under_box > ul > li {
+  margin: 0 3.8px;
+}
+footer .inner .under_box > ul > li:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 84px;
+  height: 32px;
+  border: 1px solid #a6b2c4;
+  border-radius: 16px;
+}
+footer .inner .under_box > ul > li:first-child a {
+  font-size: 1.4rem;
+  color: #626d7f;
+}
+footer .inner .under_box > ul > li:first-child a:hover {
+  text-decoration: underline;
+}
+footer .inner .footer_award {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
 }
