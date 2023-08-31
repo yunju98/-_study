@@ -63,17 +63,6 @@ header .inner .sub_nav .direct_box button {
   border: none;
   background-color: transparent;
 }
-header .inner .sub_nav .direct_box::before {
-  content: "";
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
 header .inner .sub_nav .direct_box ul {
   display: none;
   position: absolute;
@@ -166,13 +155,11 @@ header .inner nav > .depth1 > li .dropdown_menu {
   background-color: #f9fbfa;
   z-index: 1000;
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 {
+header .inner nav > .depth1 > li .dropdown_menu .inner {
   display: flex;
-  justify-content: space-between;
   width: 1250px;
-  margin: auto;
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 h2 {
+header .inner nav > .depth1 > li .dropdown_menu .inner h2 {
   width: 255px;
   padding: 25px 0;
   font-size: 2.2rem;
@@ -181,7 +168,7 @@ header .inner nav > .depth1 > li .dropdown_menu .depth2 h2 {
   background: no-repeat top center/100%;
   text-align: left;
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 h2 span {
+header .inner nav > .depth1 > li .dropdown_menu .inner h2 span {
   display: block;
   padding: 10px 0;
   font-size: 1.4rem;
@@ -189,33 +176,38 @@ header .inner nav > .depth1 > li .dropdown_menu .depth2 h2 span {
   color: #767676;
   line-height: 24px;
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 .dropdown_img1 {
+header .inner nav > .depth1 > li .dropdown_menu .inner .dropdown_img1 {
   background-image: url(../../assets/img/img_navBg1.jpg);
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 .dropdown_img2 {
+header .inner nav > .depth1 > li .dropdown_menu .inner .dropdown_img2 {
   background-image: url(../../assets/img/img_navBg2.jpg);
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 .dropdown_img3 {
+header .inner nav > .depth1 > li .dropdown_menu .inner .dropdown_img3 {
   background-image: url(../../assets/img/img_navBg3.jpg);
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 .dropdown_img4 {
+header .inner nav > .depth1 > li .dropdown_menu .inner .dropdown_img4 {
   background-image: url(../../assets/img/img_navBg4.jpg);
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 .dropdown_img5 {
+header .inner nav > .depth1 > li .dropdown_menu .inner .dropdown_img5 {
   background-image: url(../../assets/img/img_navBg5.jpg);
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 > li {
+header .inner nav > .depth1 > li .dropdown_menu .inner .depth2 {
+  display: flex;
+  width: 995px;
+}
+header .inner nav > .depth1 > li .dropdown_menu .inner .depth2 > li {
   flex-grow: 1;
   height: 455px;
   padding: 25px 10px;
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  border: 1px solid transparent;
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 > li:hover {
+header .inner nav > .depth1 > li .dropdown_menu .inner .depth2 > li:hover {
   background-color: #e9f7f7;
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 > li > a {
+header .inner nav > .depth1 > li .dropdown_menu .inner .depth2 > li > a {
   display: inline-block;
   padding: 5px 0;
   font-size: 1.6rem;
@@ -223,19 +215,19 @@ header .inner nav > .depth1 > li .dropdown_menu .depth2 > li > a {
   color: #555;
   letter-spacing: -1px;
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 > li .depth3 {
+header .inner nav > .depth1 > li .dropdown_menu .inner .depth2 > li .depth3 {
   padding: 10px 0;
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 > li .depth3 li {
+header .inner nav > .depth1 > li .dropdown_menu .inner .depth2 > li .depth3 li {
   padding: 5px 0;
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 > li .depth3 li a {
+header .inner nav > .depth1 > li .dropdown_menu .inner .depth2 > li .depth3 li a {
   display: inline-block;
   font-size: 1.4rem;
   color: #555;
   letter-spacing: -1.5px;
 }
-header .inner nav > .depth1 > li .dropdown_menu .depth2 > li .depth3 li a:hover {
+header .inner nav > .depth1 > li .dropdown_menu .inner .depth2 > li .depth3 li a:hover {
   color: #009591;
   text-decoration: underline;
 }
@@ -249,21 +241,10 @@ header .inner nav .search_box .search_btn {
   border: none;
   background-color: transparent;
 }
-header .inner nav .search_box::before {
-  content: "";
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
 header .inner nav .search_box .detail_search_box {
   display: none;
   position: absolute;
-  top: 40px;
+  top: 50px;
   right: 30px;
   width: 612px;
   height: 600px;
@@ -331,22 +312,19 @@ header .inner nav .search_box .detail_search_box .issue_list ul li a:hover {
   text-decoration: underline;
   text-underline-position: under;
 }
+header .inner nav .search_box .detail_search_box .search_close_btn {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 30px;
+  border: none;
+  background-color: transparent;
+}
 header .inner nav .all_nav_btn {
   display: flex;
   align-items: center;
   border: none;
   background-color: transparent;
-}
-header .inner nav::before {
-  content: "";
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
 }
 header .inner nav .popup_menu {
   display: none;
@@ -557,12 +535,12 @@ main .inner .quick_menu article h3 > span {
 }
 main .inner .quick_menu article > ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: calc(100% - 60px);
+  padding-top: 30px;
 }
 main .inner .quick_menu article > ul > li {
   width: 80px;
-  margin: 30px 60px 0 0;
 }
 main .inner .quick_menu article > ul > li:last-child {
   margin-right: 0;
@@ -641,11 +619,9 @@ main .inner .quick_menu .menu01 a:hover:after {
 }
 main .inner .quick_menu .menu02 {
   position: relative;
-  margin-top: 40px;
 }
 main .inner .quick_menu .menu02 li {
   width: 90px;
-  margin: 30px 50px 0 0;
   background: url(../../assets/img/main_icon_bg.png) no-repeat left bottom 34px/90px 54px;
 }
 main .inner .quick_menu .menu02 li .find_item1 {
@@ -711,24 +687,23 @@ main .inner .main_content .guide_box .left_box {
 main .inner .main_content .guide_box .left_box > li {
   width: 369.5px;
   height: 120px;
-  background: url(../../assets/img/main_quick_ul_3_2.png) no-repeat right center/120px;
 }
-main .inner .main_content .guide_box .left_box > li:first-child {
+main .inner .main_content .guide_box .left_box > li:first-child a {
   background-image: url(../../assets/img/main_quick_ul_3_1.png);
   background-position: right 38px center;
   border-right: 2px solid #eaeaea;
 }
 main .inner .main_content .guide_box .left_box > li > a {
   display: block;
-  width: 249.5px;
-  height: 126px;
+  height: 100%;
   margin-bottom: 11px;
   padding: 10px 0;
+  color: #333;
   font-size: 2rem;
   font-weight: 500;
-  color: #333;
   line-height: 25px;
   letter-spacing: -0.08em;
+  background: url(../../assets/img/main_quick_ul_3_2.png) no-repeat right center/120px;
 }
 main .inner .main_content .guide_box .left_box > li > a:hover {
   color: #009591;
@@ -778,8 +753,9 @@ main .inner .main_content .guide_box .right_box > li > span {
 main .inner .main_content .guide_box .right_box > li a {
   display: flex;
   align-items: center;
-  width: 126px;
-  padding: 5px 0 0 8px;
+  width: 120px;
+  margin-left: 10px;
+  padding-top: 5px;
   font-size: 1.6rem;
   font-weight: 500;
   color: #333;
@@ -803,7 +779,7 @@ main .inner .main_content .scroll_box {
   justify-content: space-between;
   margin-top: 30px;
 }
-main .inner .main_content .scroll_box aside {
+main .inner .main_content .scroll_box div {
   display: flex;
   width: 615px;
   height: 73px;
@@ -811,7 +787,7 @@ main .inner .main_content .scroll_box aside {
   border-radius: 25px;
   box-shadow: 1px 1px 12px 0 rgba(0, 0, 0, 0.08);
 }
-main .inner .main_content .scroll_box aside > h3 {
+main .inner .main_content .scroll_box div > h3 {
   display: flex;
   align-items: center;
   width: 100px;
@@ -820,21 +796,21 @@ main .inner .main_content .scroll_box aside > h3 {
   color: #333;
   letter-spacing: -0.025em;
 }
-main .inner .main_content .scroll_box aside > ul {
+main .inner .main_content .scroll_box div > ul {
   width: 382px;
   overflow: hidden;
 }
-main .inner .main_content .scroll_box aside > ul > li {
+main .inner .main_content .scroll_box div > ul > li {
   display: flex;
   align-items: center;
   height: 27px;
 }
-main .inner .main_content .scroll_box aside > ul > li > a {
+main .inner .main_content .scroll_box div > ul > li > a {
   font-size: 1.6rem;
   color: #666;
   letter-spacing: -0.08em;
 }
-main .inner .main_content .scroll_box aside > ul > li > a::before {
+main .inner .main_content .scroll_box div > ul > li > a::before {
   content: "";
   display: inline-block;
   width: 3px;
@@ -844,10 +820,10 @@ main .inner .main_content .scroll_box aside > ul > li > a::before {
   border-radius: 30px;
   vertical-align: middle;
 }
-main .inner .main_content .scroll_box aside > ul > li > a:hover {
+main .inner .main_content .scroll_box div > ul > li > a:hover {
   text-decoration: underline;
 }
-main .inner .main_content .scroll_box aside > a {
+main .inner .main_content .scroll_box div > a {
   display: block;
   position: relative;
   width: 53px;
@@ -856,13 +832,13 @@ main .inner .main_content .scroll_box aside > a {
   color: #009591;
   letter-spacing: -0.025em;
 }
-main .inner .main_content .scroll_box aside > a::before {
+main .inner .main_content .scroll_box div > a::before {
   content: "+";
   position: absolute;
   left: 0;
   top: 1px;
 }
-main .inner .main_content .scroll_box aside > a:hover {
+main .inner .main_content .scroll_box div > a:hover {
   text-decoration: underline;
 }
 main .inner .main_content .event_box {
@@ -925,6 +901,7 @@ main .inner .num_box {
 }
 main .inner .num_box > ul {
   display: flex;
+  justify-content: space-between;
   width: 820px;
   height: 300px;
   padding: 40px;
@@ -933,15 +910,14 @@ main .inner .num_box > ul {
 }
 main .inner .num_box > ul > li h3 {
   height: 19px;
+  color: #333;
   font-size: 1.6rem;
   font-weight: 500;
-  color: #333;
   letter-spacing: -0.08em;
 }
 main .inner .num_box > ul .left_box {
   position: relative;
   width: 369px;
-  padding-right: 30px;
   border-right: 2px solid #eaeaea;
   cursor: pointer;
 }
@@ -968,7 +944,7 @@ main .inner .num_box > ul .left_box p span {
 }
 main .inner .num_box > ul .left_box .bottom_btn {
   display: block;
-  width: 100%;
+  width: 337px;
   height: 80px;
   margin-top: 22px;
   padding: 18px 0 17px 90px;
@@ -1015,8 +991,7 @@ main .inner .num_box > ul .left_box .btn_ars {
 main .inner .num_box > ul .right_box {
   display: flex;
   flex-wrap: wrap;
-  width: 369px;
-  padding-left: 30px;
+  width: 339px;
 }
 main .inner .num_box > ul .right_box > span {
   height: 19px;
@@ -1250,4 +1225,15 @@ footer .inner .footer_award {
   display: flex;
   justify-content: space-between;
   margin-top: 35px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
