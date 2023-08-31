@@ -43,8 +43,13 @@ header{
         button{
           display: flex;
           align-items: center;
+          position: relative;
           border: none;
-          background-color: transparent;
+          background: transparent;
+        }
+        .active{
+          display: block;
+          z-index: 2000;
         }
         // ------다이렉트보험 클릭시 팝업창 (S)-----
         ul{
@@ -765,40 +770,41 @@ main{
             padding: 0 23px;
             border-radius: 25px;
             box-shadow: 1px 1px 12px 0 rgba(0 ,0 ,0 , 0.08);
-            > span{
-              display: block;
-              width: 29px;
-              height: 76px;
-              background: url(../../assets/img/main_quick_ul_4.png) no-repeat left center/124px 31px;
-            }
             a{
               display: flex;
               align-items: center;
-              width: 120px;
-              margin-left: 10px;
+              width: 100%;
               padding-top: 5px;
               font-size: 1.6rem;
               font-weight: 500;
               color: #333;
               letter-spacing: -0.08em;
               background: url(../../assets/img/main_link_arr.png) no-repeat right top 33px/ 7px 12px;
+              &::before{
+                content: "";
+                display: block;
+                width: 29px;
+                height: 76px;
+                padding-right: 5px;
+                background: url(../../assets/img/main_quick_ul_4.png) no-repeat left center/124px 31px;
+              }
               &:hover{
                 color: #009591;
               }
             }
           }
           .guide_item02{
-            > span{
+            a::before{
               background-position-x: -31px;
             }
           }
           .guide_item03{
-            > span{
+            a::before{
               background-position-x: -62px;
             }
           }
           .guide_item04{
-            > span{
+            a::before{
               background-position-x: -93px;
             }
           }
@@ -1292,4 +1298,7 @@ footer{
   bottom: 0;
   background-color: rgba(0,0,0,0.5);
   z-index: 1000;
+}
+.active{
+  display: block;
 }

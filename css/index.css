@@ -60,8 +60,13 @@ header .inner .sub_nav .direct_box {
 header .inner .sub_nav .direct_box button {
   display: flex;
   align-items: center;
+  position: relative;
   border: none;
-  background-color: transparent;
+  background: transparent;
+}
+header .inner .sub_nav .direct_box .active {
+  display: block;
+  z-index: 2000;
 }
 header .inner .sub_nav .direct_box ul {
   display: none;
@@ -744,17 +749,10 @@ main .inner .main_content .guide_box .right_box > li {
   border-radius: 25px;
   box-shadow: 1px 1px 12px 0 rgba(0, 0, 0, 0.08);
 }
-main .inner .main_content .guide_box .right_box > li > span {
-  display: block;
-  width: 29px;
-  height: 76px;
-  background: url(../../assets/img/main_quick_ul_4.png) no-repeat left center/124px 31px;
-}
 main .inner .main_content .guide_box .right_box > li a {
   display: flex;
   align-items: center;
-  width: 120px;
-  margin-left: 10px;
+  width: 100%;
   padding-top: 5px;
   font-size: 1.6rem;
   font-weight: 500;
@@ -762,16 +760,24 @@ main .inner .main_content .guide_box .right_box > li a {
   letter-spacing: -0.08em;
   background: url(../../assets/img/main_link_arr.png) no-repeat right top 33px/7px 12px;
 }
+main .inner .main_content .guide_box .right_box > li a::before {
+  content: "";
+  display: block;
+  width: 29px;
+  height: 76px;
+  padding-right: 5px;
+  background: url(../../assets/img/main_quick_ul_4.png) no-repeat left center/124px 31px;
+}
 main .inner .main_content .guide_box .right_box > li a:hover {
   color: #009591;
 }
-main .inner .main_content .guide_box .right_box .guide_item02 > span {
+main .inner .main_content .guide_box .right_box .guide_item02 a::before {
   background-position-x: -31px;
 }
-main .inner .main_content .guide_box .right_box .guide_item03 > span {
+main .inner .main_content .guide_box .right_box .guide_item03 a::before {
   background-position-x: -62px;
 }
-main .inner .main_content .guide_box .right_box .guide_item04 > span {
+main .inner .main_content .guide_box .right_box .guide_item04 a::before {
   background-position-x: -93px;
 }
 main .inner .main_content .scroll_box {
@@ -1236,4 +1242,8 @@ footer .inner .footer_award {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
+}
+
+.active {
+  display: block;
 }
