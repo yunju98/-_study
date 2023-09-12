@@ -245,6 +245,13 @@ header .inner nav .search_box .search_btn {
   margin: 0 30px;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+}
+header .inner nav .search_box .search_btn img {
+  transition: transform 0.3s ease;
+}
+header .inner nav .search_box .search_btn .active {
+  transform: rotate3d(6, 4, -1, 90deg);
 }
 header .inner nav .search_box .detail_search_box {
   display: none;
@@ -253,11 +260,12 @@ header .inner nav .search_box .detail_search_box {
   right: 30px;
   width: 612px;
   height: 600px;
+  color: #555;
   padding: 0 0 90px;
   font-size: 1.4rem;
-  color: #555;
   border-radius: 10px;
   background-color: #f9f9fb;
+  transition: all 1s ease;
   z-index: 2000;
 }
 header .inner nav .search_box .detail_search_box form {
@@ -324,12 +332,17 @@ header .inner nav .search_box .detail_search_box .search_close_btn {
   width: 30px;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+}
+header .inner nav .search_box .active {
+  display: block;
 }
 header .inner nav .all_nav_btn {
   display: flex;
   align-items: center;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 header .inner nav .popup_menu {
   display: none;
@@ -425,7 +438,7 @@ header .inner nav .popup_menu .menu_depth div .depth1 li .depth2 li a:hover {
   color: #009591;
   text-decoration: underline;
 }
-header .inner nav .popup_menu .menu_depth .popup_menu01 {
+header .inner nav .popup_menu .menu_depth .active {
   display: block;
 }
 header .inner nav .popup_menu .close_btn {
@@ -434,20 +447,24 @@ header .inner nav .popup_menu .close_btn {
   right: 0;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+}
+header .inner nav .active {
+  display: flex;
 }
 
 main .inner .main_banner {
   position: relative;
-  width: 100%;
-  height: 100%;
   margin-top: 10px;
 }
 main .inner .main_banner .gallery_box {
-  display: flex;
+  height: 450px;
   overflow: hidden;
 }
 main .inner .main_banner .gallery_box .gallery_item {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 main .inner .main_banner .gallery_box .gallery_item > a {
   position: absolute;
@@ -785,7 +802,7 @@ main .inner .main_content .scroll_box {
   justify-content: space-between;
   margin-top: 30px;
 }
-main .inner .main_content .scroll_box div {
+main .inner .main_content .scroll_box > div {
   display: flex;
   width: 615px;
   height: 73px;
@@ -793,7 +810,7 @@ main .inner .main_content .scroll_box div {
   border-radius: 25px;
   box-shadow: 1px 1px 12px 0 rgba(0, 0, 0, 0.08);
 }
-main .inner .main_content .scroll_box div > h3 {
+main .inner .main_content .scroll_box > div > h3 {
   display: flex;
   align-items: center;
   width: 100px;
@@ -802,21 +819,24 @@ main .inner .main_content .scroll_box div > h3 {
   color: #333;
   letter-spacing: -0.025em;
 }
-main .inner .main_content .scroll_box div > ul {
-  width: 382px;
+main .inner .main_content .scroll_box > div .scroll_inner {
+  height: 27px;
   overflow: hidden;
 }
-main .inner .main_content .scroll_box div > ul > li {
+main .inner .main_content .scroll_box > div .scroll_inner > ul {
+  width: 382px;
+}
+main .inner .main_content .scroll_box > div .scroll_inner > ul > li {
   display: flex;
   align-items: center;
   height: 27px;
 }
-main .inner .main_content .scroll_box div > ul > li > a {
+main .inner .main_content .scroll_box > div .scroll_inner > ul > li > a {
   font-size: 1.6rem;
   color: #666;
   letter-spacing: -0.08em;
 }
-main .inner .main_content .scroll_box div > ul > li > a::before {
+main .inner .main_content .scroll_box > div .scroll_inner > ul > li > a::before {
   content: "";
   display: inline-block;
   width: 3px;
@@ -826,10 +846,10 @@ main .inner .main_content .scroll_box div > ul > li > a::before {
   border-radius: 30px;
   vertical-align: middle;
 }
-main .inner .main_content .scroll_box div > ul > li > a:hover {
+main .inner .main_content .scroll_box > div .scroll_inner > ul > li > a:hover {
   text-decoration: underline;
 }
-main .inner .main_content .scroll_box div > a {
+main .inner .main_content .scroll_box > div > a {
   display: block;
   position: relative;
   width: 53px;
@@ -838,13 +858,13 @@ main .inner .main_content .scroll_box div > a {
   color: #009591;
   letter-spacing: -0.025em;
 }
-main .inner .main_content .scroll_box div > a::before {
+main .inner .main_content .scroll_box > div > a::before {
   content: "+";
   position: absolute;
   left: 0;
   top: 1px;
 }
-main .inner .main_content .scroll_box div > a:hover {
+main .inner .main_content .scroll_box > div > a:hover {
   text-decoration: underline;
 }
 main .inner .main_content .event_box {
@@ -1114,17 +1134,28 @@ footer .inner .top_box .add_list {
   width: 17.2%;
 }
 footer .inner .top_box .add_list button {
+  position: relative;
   width: 100%;
   padding: 15px 0 15px 20px;
   font-size: 1.4rem;
   font-weight: 400;
   color: #555;
   border: none;
-  background: transparent url(../../assets/img/icon_selectDown2.png) no-repeat right center;
+  background: transparent;
   text-align: left;
+  cursor: pointer;
 }
 footer .inner .top_box .add_list button:hover {
   text-decoration: underline;
+}
+footer .inner .top_box .add_list button img {
+  position: absolute;
+  top: 23px;
+  right: 0px;
+}
+footer .inner .top_box .add_list button .active {
+  right: 10px;
+  transform: rotate(180deg);
 }
 footer .inner .top_box .add_list > ul {
   display: none;
@@ -1147,16 +1178,19 @@ footer .inner .top_box .add_list > ul > li > a {
 footer .inner .top_box .add_list > ul > li > a:hover {
   text-decoration: underline;
 }
+footer .inner .top_box .add_list .active {
+  display: block;
+}
 footer .inner .top_box .two_list {
   width: 15.8%;
 }
 footer .inner .top_box .footer_slider {
   width: 16.2%;
   border-right: 1px solid #e5e5e5;
+  overflow: hidden;
 }
 footer .inner .top_box .footer_slider > ul {
   display: flex;
-  overflow: hidden;
 }
 footer .inner .top_box::after {
   content: "";

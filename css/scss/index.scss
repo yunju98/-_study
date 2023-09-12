@@ -234,6 +234,13 @@ header{
           margin: 0 30px;
           border: none;
           background-color: transparent;
+          cursor: pointer;
+          img{
+            transition: transform 0.3s ease;
+          }
+          .active{
+            transform: rotate3d(6,4,-1, 90deg);
+          }
         }
         // --------검색창 클릭시 (S)---------------
         .detail_search_box{
@@ -243,11 +250,12 @@ header{
           right: 30px;
           width: 612px;
           height: 600px;
+          color: #555;
           padding: 0 0 90px;
           font-size: 1.4rem;
-          color: #555;
           border-radius: 10px;
           background-color: #f9f9fb;
+          transition:all 1s ease;
           z-index: 2000;
           form{
             height: 70px;
@@ -313,7 +321,11 @@ header{
             width: 30px;
             border: none;
             background-color: transparent;
+            cursor: pointer;
           }
+        }
+        .active{
+          display: block;
         }
         // --------검색창 클릭시 (E)---------------
       }
@@ -322,6 +334,7 @@ header{
         align-items: center;
         border: none;
         background-color: transparent;
+        cursor: pointer;
       }
       // ---------팝업메뉴 클릭시(S)----------------
       .popup_menu{
@@ -424,7 +437,7 @@ header{
               }
             }
           }
-          .popup_menu01{
+          .active{
             display: block;
           }
         }
@@ -434,7 +447,11 @@ header{
           right: 0;
           border: none;
           background-color: transparent;
+          cursor: pointer;
         }
+      }
+      .active{
+        display: flex;
       }
     }
     // ---------팝업메뉴 클릭시(E)----------------
@@ -447,14 +464,14 @@ main{
     //----------------------메인배너 (S)----------------------
     .main_banner{
       position: relative;
-      width: 100%;
-      height: 100%;
       margin-top: 10px;
       .gallery_box{
-        display: flex;
+        height: 450px;
         overflow: hidden;
         .gallery_item{
-          position: relative;
+          position: absolute;
+          top: 0;
+          left: 0;
           > a{
             position: absolute;
             top: 49.5%;
@@ -816,7 +833,7 @@ main{
         display: flex;
         justify-content: space-between;
         margin-top: 30px;
-        div{
+        > div{
           display: flex;
           width: 615px;
           height: 73px;
@@ -832,29 +849,32 @@ main{
             color: #333;
             letter-spacing: -0.025em;
           }
-          > ul{
-            width: 382px;
-            overflow: hidden;
-            > li{
-              display: flex;
-              align-items: center;
-              height: 27px;
-              > a{
-                font-size: 1.6rem;
-                color: #666;
-                letter-spacing: -0.08em;
-                &::before{
-                  content: "";
-                  display: inline-block;
-                  width: 3px;
-                  height: 3px;
-                  margin-right: 6px;
-                  background-color: #009591;
-                  border-radius: 30px;
-                  vertical-align: middle;
-                }
-                &:hover{
-                  text-decoration: underline;
+          .scroll_inner{
+            height: 27px;
+            overflow: hidden; 
+            > ul{
+              width: 382px;
+              > li{
+                display: flex;
+                align-items: center;
+                height: 27px;
+                > a{
+                  font-size: 1.6rem;
+                  color: #666;
+                  letter-spacing: -0.08em;
+                  &::before{
+                    content: "";
+                    display: inline-block;
+                    width: 3px;
+                    height: 3px;
+                    margin-right: 6px;
+                    background-color: #009591;
+                    border-radius: 30px;
+                    vertical-align: middle;
+                  }
+                  &:hover{
+                    text-decoration: underline;
+                  }
                 }
               }
             }
@@ -1163,16 +1183,27 @@ footer{
       .add_list{
         width: 17.2%;
         button{
+          position: relative;
           width: 100%;
           padding: 15px 0 15px 20px;
           font-size: 1.4rem;
           font-weight: 400;
           color: #555;
           border: none;
-          background: transparent url(../../assets/img/icon_selectDown2.png) no-repeat right center;
+          background: transparent;
           text-align: left;
+          cursor: pointer;
           &:hover{
             text-decoration: underline;
+          }
+          img{
+            position: absolute;
+            top: 23px;
+            right: 0px;
+          }
+          .active{
+            right: 10px;
+            transform: rotate(180deg);
           }
         }
         > ul{
@@ -1196,6 +1227,9 @@ footer{
             }
           }
         }
+        .active{
+          display: block;
+        }
       }
       .two_list{
         width: 15.8%;
@@ -1203,9 +1237,9 @@ footer{
       .footer_slider{
         width: 16.2%;
         border-right: 1px solid #e5e5e5;
+        overflow: hidden;
         > ul{
           display: flex;
-          overflow: hidden;
         }
       }
       &::after{
