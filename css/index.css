@@ -64,10 +64,6 @@ header .inner .sub_nav .direct_box button {
   border: none;
   background: transparent;
 }
-header .inner .sub_nav .direct_box .active {
-  display: block;
-  z-index: 2000;
-}
 header .inner .sub_nav .direct_box ul {
   display: none;
   position: absolute;
@@ -79,27 +75,27 @@ header .inner .sub_nav .direct_box ul {
   background-color: #fff;
   z-index: 2000;
 }
-header .inner .sub_nav .direct_box ul li {
+header .inner .sub_nav .direct_box ul > li {
   padding: 19px 20px 20px 85px;
   background: no-repeat left 20px center/45px;
 }
-header .inner .sub_nav .direct_box ul li:not(:last-child) {
+header .inner .sub_nav .direct_box ul > li:not(:last-child) {
   border-bottom: 1px dashed #ddd;
 }
-header .inner .sub_nav .direct_box ul li a {
+header .inner .sub_nav .direct_box ul > li a {
   font-size: 1.8rem;
   color: #555;
   font-weight: 500;
   letter-spacing: -0.05em;
 }
-header .inner .sub_nav .direct_box ul li a:hover {
+header .inner .sub_nav .direct_box ul > li a:hover {
   text-decoration: underline;
 }
-header .inner .sub_nav .direct_box ul li a span {
+header .inner .sub_nav .direct_box ul > li a span {
   font-size: 1.4rem;
   color: #767676;
 }
-header .inner .sub_nav .direct_box ul li a span .red {
+header .inner .sub_nav .direct_box ul > li a span .red {
   color: #ed1651;
 }
 header .inner .sub_nav .direct_box ul .direct_type1 {
@@ -113,6 +109,10 @@ header .inner .sub_nav .direct_box ul .direct_type3 {
 }
 header .inner .sub_nav .direct_box ul .direct_type4 {
   background-image: url(../../assets/img/icon_go5.png);
+}
+header .inner .sub_nav .direct_box .active {
+  display: block;
+  z-index: 2000;
 }
 header .inner nav {
   display: flex;
@@ -248,16 +248,21 @@ header .inner nav .search_box .search_btn {
   cursor: pointer;
 }
 header .inner nav .search_box .search_btn img {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 header .inner nav .search_box .search_btn .active {
   transform: rotate3d(6, 4, -1, 90deg);
 }
 header .inner nav .search_box .detail_search_box {
-  display: none;
   position: absolute;
   top: 50px;
   right: 30px;
+  transition: all 0.5s ease;
+  z-index: -1;
+  opacity: 0;
+}
+header .inner nav .search_box .detail_search_box .search_inner_box {
+  display: block;
   width: 612px;
   height: 600px;
   color: #555;
@@ -265,21 +270,20 @@ header .inner nav .search_box .detail_search_box {
   font-size: 1.4rem;
   border-radius: 10px;
   background-color: #f9f9fb;
-  transition: all 1s ease;
-  z-index: 2000;
 }
-header .inner nav .search_box .detail_search_box form {
+header .inner nav .search_box .detail_search_box .search_inner_box form {
+  width: 612px;
   height: 70px;
   background-color: #fff;
   border-radius: 10px 10px 0 0;
 }
-header .inner nav .search_box .detail_search_box form fieldset {
+header .inner nav .search_box .detail_search_box .search_inner_box form fieldset {
   display: flex;
   justify-content: space-between;
   border: none;
   border-bottom: 1px solid #009591;
 }
-header .inner nav .search_box .detail_search_box form fieldset input {
+header .inner nav .search_box .detail_search_box .search_inner_box form fieldset input {
   padding: 10px 30px;
   width: 507px;
   height: 70px;
@@ -291,36 +295,36 @@ header .inner nav .search_box .detail_search_box form fieldset input {
   appearance: none;
   letter-spacing: -0.05em;
 }
-header .inner nav .search_box .detail_search_box form fieldset button {
+header .inner nav .search_box .detail_search_box .search_inner_box form fieldset button {
   width: 70px;
   height: 70px;
   border: none;
   background: transparent url(../../assets/img/main_search.png) no-repeat right 30px center/30px;
 }
-header .inner nav .search_box .detail_search_box .issue_list {
+header .inner nav .search_box .detail_search_box .search_inner_box .issue_list {
   padding: 40px 30px 0;
 }
-header .inner nav .search_box .detail_search_box .issue_list strong {
+header .inner nav .search_box .detail_search_box .search_inner_box .issue_list strong {
   font-size: 2rem;
   color: #333;
 }
-header .inner nav .search_box .detail_search_box .issue_list ul {
+header .inner nav .search_box .detail_search_box .search_inner_box .issue_list ul {
   margin: 26px 0 0;
 }
-header .inner nav .search_box .detail_search_box .issue_list ul li {
+header .inner nav .search_box .detail_search_box .search_inner_box .issue_list ul li {
   margin: 0 0 18px;
 }
-header .inner nav .search_box .detail_search_box .issue_list ul li .num {
+header .inner nav .search_box .detail_search_box .search_inner_box .issue_list ul li .num {
   margin: 0 11px 0 0;
   font-size: 1.8rem;
   color: #009591;
 }
-header .inner nav .search_box .detail_search_box .issue_list ul li a {
+header .inner nav .search_box .detail_search_box .search_inner_box .issue_list ul li a {
   font-size: 1.8rem;
   color: #555;
   letter-spacing: -0.05em;
 }
-header .inner nav .search_box .detail_search_box .issue_list ul li a:hover {
+header .inner nav .search_box .detail_search_box .search_inner_box .issue_list ul li a:hover {
   color: #009591;
   text-decoration: underline;
   text-underline-position: under;
@@ -334,8 +338,10 @@ header .inner nav .search_box .detail_search_box .search_close_btn {
   background-color: transparent;
   cursor: pointer;
 }
-header .inner nav .search_box .active {
-  display: block;
+header .inner nav .search_box > .active {
+  transition: all 0.5s ease 0.1s;
+  opacity: 1;
+  z-index: 2000;
 }
 header .inner nav .all_nav_btn {
   display: flex;
@@ -346,9 +352,10 @@ header .inner nav .all_nav_btn {
 }
 header .inner nav .popup_menu {
   display: none;
-  position: absolute;
-  top: 130px;
-  left: 450px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2000;
 }
 header .inner nav .popup_menu .menu_tab {
@@ -1267,7 +1274,7 @@ footer .inner .footer_award {
   margin-top: 35px;
 }
 
-.overlay {
+body > span {
   display: none;
   position: fixed;
   top: 0;
@@ -1277,7 +1284,6 @@ footer .inner .footer_award {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
-
-.active {
+body .active {
   display: block;
 }

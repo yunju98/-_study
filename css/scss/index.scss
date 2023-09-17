@@ -47,10 +47,6 @@ header{
           border: none;
           background: transparent;
         }
-        .active{
-          display: block;
-          z-index: 2000;
-        }
         // ------다이렉트보험 클릭시 팝업창 (S)-----
         ul{
           display: none; //block으로 바뀌어야함
@@ -62,7 +58,7 @@ header{
           border: 2px solid #009090;
           background-color: #fff;
           z-index: 2000;
-          li{
+          > li{
             padding: 19px 20px 20px 85px;
             background: no-repeat left 20px center/45px;
             &:not(:last-child){
@@ -98,6 +94,10 @@ header{
             background-image: url(../../assets/img/icon_go5.png); 
           }
           // ------다이렉트보험 클릭시 팝업창 (E)-----
+        }
+        .active{
+          display: block;
+          z-index: 2000;
         }
       }
     }
@@ -236,79 +236,83 @@ header{
           background-color: transparent;
           cursor: pointer;
           img{
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
           }
           .active{
             transform: rotate3d(6,4,-1, 90deg);
           }
         }
         // --------검색창 클릭시 (S)---------------
-        .detail_search_box{
-          display: none; //block으로 바뀌어야함
+        .detail_search_box{ //block으로 바뀌어야함
           position: absolute;
           top: 50px;
           right: 30px;
-          width: 612px;
-          height: 600px;
-          color: #555;
-          padding: 0 0 90px;
-          font-size: 1.4rem;
-          border-radius: 10px;
-          background-color: #f9f9fb;
-          transition:all 1s ease;
-          z-index: 2000;
-          form{
-            height: 70px;
-            background-color: #fff;
-            border-radius: 10px 10px 0 0;
-            fieldset{
-              display: flex;
-              justify-content: space-between;
-              border: none;
-              border-bottom: 1px solid #009591;
-              input{
-                padding: 10px 30px;
-                width: 507px;
-                height: 70px;
-                font-size: 2rem;
-                font-weight: 400;
-                color: #333;
+          transition: all 0.5s ease;
+          z-index: -1;
+          opacity: 0;
+          .search_inner_box{
+            display: block;
+            width: 612px;
+            height: 600px;
+            color: #555;
+            padding: 0 0 90px;
+            font-size: 1.4rem;
+            border-radius: 10px;
+            background-color: #f9f9fb;
+            form{
+              width: 612px;
+              height: 70px;
+              background-color: #fff;
+              border-radius: 10px 10px 0 0;
+              fieldset{
+                display: flex;
+                justify-content: space-between;
                 border: none;
-                border-radius: 10px 0 0;
-                appearance: none;
-                letter-spacing: -0.05em;
-              }
-              button{
-                width: 70px;
-                height: 70px;
-                border: none;
-                background: transparent url(../../assets/img/main_search.png) no-repeat right 30px center/ 30px;
-              }
-            }
-          }
-          .issue_list{
-            padding: 40px 30px 0;
-            strong{
-              font-size: 2rem;
-              color: #333;
-            }
-            ul{
-              margin: 26px 0 0;
-              li{
-                margin: 0 0 18px;
-                .num{
-                  margin: 0 11px 0 0;
-                  font-size: 1.8rem;
-                  color: #009591;
-                }
-                a{
-                  font-size: 1.8rem;
-                  color: #555;
+                border-bottom: 1px solid #009591;
+                input{
+                  padding: 10px 30px;
+                  width: 507px;
+                  height: 70px;
+                  font-size: 2rem;
+                  font-weight: 400;
+                  color: #333;
+                  border: none;
+                  border-radius: 10px 0 0;
+                  appearance: none;
                   letter-spacing: -0.05em;
-                  &:hover{
+                }
+                button{
+                  width: 70px;
+                  height: 70px;
+                  border: none;
+                  background: transparent url(../../assets/img/main_search.png) no-repeat right 30px center/ 30px;
+                }
+              }
+            }
+            .issue_list{
+              padding: 40px 30px 0;
+              strong{
+                font-size: 2rem;
+                color: #333;
+              }
+              ul{
+                margin: 26px 0 0;
+                li{
+                  margin: 0 0 18px;
+                  .num{
+                    margin: 0 11px 0 0;
+                    font-size: 1.8rem;
                     color: #009591;
-                    text-decoration: underline;
-                    text-underline-position: under;
+                  }
+                  a{
+                    font-size: 1.8rem;
+                    color: #555;
+                    letter-spacing: -0.05em;
+                    &:hover{
+                      color: #009591;
+                      text-decoration: underline;
+                      text-underline-position: under;
+                    }
                   }
                 }
               }
@@ -324,8 +328,10 @@ header{
             cursor: pointer;
           }
         }
-        .active{
-          display: block;
+        > .active{
+          transition:all 0.5s ease 0.1s;
+          opacity: 1;
+          z-index: 2000;
         }
         // --------검색창 클릭시 (E)---------------
       }
@@ -339,9 +345,10 @@ header{
       // ---------팝업메뉴 클릭시(S)----------------
       .popup_menu{
         display: none; //flex으로 바뀌어야함
-        position: absolute;
-        top: 130px;
-        left: 450px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
         z-index: 2000;
         .menu_tab{
           width: 200px;
@@ -1323,16 +1330,19 @@ footer{
   }
 }
 //----- 어두운창 ------
-.overlay{
-  display: none; //block으로 바뀌어야함
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 1000;
-}
-.active{
-  display: block;
+
+body{
+  > span{
+    display: none; //block으로 바뀌어야함
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+  } 
+  .active{
+    display: block;
+  }
 }

@@ -1,7 +1,13 @@
 const overlayOn = () => {
+  $(".overlay").on('scroll touchmove mousewheel', function(e){
+    e.preventDefault();
+    e.stopPropagation(); 
+    return false;
+    })
   $(".overlay").addClass("active");
 }
 const overlayOff = () => {
+  $(".overlay").off('scroll touchmove mousewheel'); 
   $(".overlay").removeClass("active");
 }
 
@@ -33,12 +39,14 @@ directBtn.on("blur" , () => {
 $(".search_btn").click(() => {
   $(".search_btn > img").addClass("active")
   $(".detail_search_box").addClass("active")
+  $(".search_inner_box").slideDown("normal")
   overlayOn();
 })
 
 $(".search_close_btn").click(() => {
   $(".search_btn > img").removeClass("active")
   $(".detail_search_box").removeClass("active")
+  $(".search_inner_box").slideUp("fast")
   overlayOff();
 })
 // 검색창 클릭시 팝업창 (E)
