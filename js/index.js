@@ -37,15 +37,13 @@ directBtn.on("blur" , () => {
 
 // 검색창 클릭시 팝업창 (S)
 $(".search_btn").click(() => {
-  $(".search_btn > img").addClass("active")
-  $(".detail_search_box").addClass("active")
+  $(".search_btn > img, .detail_search_box").addClass("active")
   $(".search_inner_box").slideDown("normal")
   overlayOn();
 })
 
 $(".search_close_btn").click(() => {
-  $(".search_btn > img").removeClass("active")
-  $(".detail_search_box").removeClass("active")
+  $(".search_btn > img, .detail_search_box").removeClass("active")
   $(".search_inner_box").slideUp("fast")
   overlayOff();
 })
@@ -92,10 +90,10 @@ setInterval(function() {
   mainSlideMove();
 }, 6000)
 
-$(".main_banner .dot_list li button").on("click", function(){
-  mainSlideCount = $(this).parent().index();
-  mainSlideMove();
-});
+// $(".main_banner .dot_list li button").on("click", function(){
+//   mainSlideCount = $(this).parent().index();
+//   mainSlideMove();
+// });
 // 메인배너 슬라이더 포깈ㅋㅋㅋㅋㅋㅋㅋㅋㅋ
 // 스크롤박스 (S)
 let scrollNum = 0;
@@ -142,29 +140,7 @@ const eventSlideMove = () => {
   }
 }
 
-const eventPrevBtn = () => {
-    setTimeout(() => {
-        $(".event_box .gallery_list").css({
-            transition : "none",
-            "margin-left" : 3 * -1250 + "px",
-        });
-        eventSlideCount = 3;
-    },100)
-}
-
-const eventNextBtn = () => {
-    setTimeout(() => {
-        $(".event_box .gallery_list").css({
-            transition : "none",
-            "margin-left" :"0px",
-        });
-        eventSlideCount = 0;
-    },100)
-}
-
-eventSlideMove();
-
-setInterval((e) => {
+let intervalFn = () => {
   eventSlideCount++;
   eventSlideMove();
   if(eventSlideCount === 4){
@@ -176,12 +152,45 @@ setInterval((e) => {
           eventSlideCount = 1;
       },500)
   }
-  // $(".event_box .gallery_box").mouseover((e) => {
-  //   e.preventdefault();
-  // })
+}
+
+let interval = setInterval((e) => {
+  intervalFn();
 },3000);
+
+$(".event_box").mouseover((e) => {
+  clearInterval(interval);
+})
+
+$(".event_box").mouseleave((e) => {
+  interval = setInterval(() => {
+    intervalFn();
+  },3000)
+})
 // 문제
-$(".event_box .control_box button").on("click",function () { 
+
+const eventPrevBtn = () => {
+  setTimeout(() => {
+      $(".event_box .gallery_list").css({
+          transition : "none",
+          "margin-left" : 3 * -1250 + "px",
+      });
+      eventSlideCount = 3;
+  },100)
+}
+
+const eventNextBtn = () => {
+  setTimeout(() => {
+      $(".event_box .gallery_list").css({
+          transition : "none",
+          "margin-left" :"0px",
+      });
+      eventSlideCount = 0;
+  },100)
+}
+
+$(".event_box .control_box button").on("click",function (e) { 
+  e.preventDefault();
   if($(this).hasClass("prev_btn")){
     eventSlideCount <= 0 ? eventPrevBtn() : eventSlideCount--;
   }else{
@@ -190,6 +199,7 @@ $(".event_box .control_box button").on("click",function () {
 });
 // 문제 끝
 $(".event_box .dot_list button").on("click", function(){
+  clearInterval(interval);
   if($(this).parent().index() === 0){
     eventSlideCount = 1
   }else if($(this).parent().index() === 1){
