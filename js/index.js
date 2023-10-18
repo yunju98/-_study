@@ -120,151 +120,52 @@ setInterval(() => {
 },5000);
 // 스크롤박스 (E)
 // 이벤트 배너 슬라이드(S)
-let eventSlideCount = 1;
-let eventItemClone1 = $(".event_box .gallery_list li").eq(0).clone();
-let eventItemClone2 = $(".event_box .gallery_list li").eq(2).clone();
-
-$(".event_box .gallery_list").append(eventItemClone1);
-$(".event_box .gallery_list").prepend(eventItemClone2);
-
-const eventSlideMove = () => {
-  $(".event_box .gallery_list").css({
-    transition : "all ease 0.5s",
-    "margin-left" : eventSlideCount * -1250 + "px",
-  });
-  $(".event_box .dot_list button").removeClass("active").eq(eventSlideCount - 1).addClass("active");
-  if(eventSlideCount === 4){
-    $(".event_box .dot_list button").eq(0).addClass("active");
-  }else if(eventSlideCount === 0){
-    $(".event_box .dot_list button").eq(2).addClass("active");
-  }
-}
-
-let intervalFn = () => {
-  eventSlideCount++;
-  eventSlideMove();
-  if(eventSlideCount === 4){
-      setTimeout(() => {
-          $(".event_box .gallery_list").css({
-              transition : "none",
-              "margin-left" : -1250 + "px",
-          });
-          eventSlideCount = 1;
-      },500)
-  }
-}
-
-let interval = setInterval((e) => {
-  intervalFn();
-},3000);
-
-$(".event_box").mouseover((e) => {
-  clearInterval(interval);
+let bullet = ["01","02","03"];
+const swiper = new Swiper('.event_box > .swiper', {
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  loop: true,
+  loopAdditionalSlides : 1,
+  slidesPerView: 1,
+  centeredSlides: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    bulletClass:"custom_bullet",
+    bulletActiveClass: "swiper-pagination-custom-bullet-active",
+    renderBullet: function (index, className) {
+        return  '<div class="' + className + '"><span>' + (bullet[index]) + '</span></div>';
+    },
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 })
-
-$(".event_box").mouseleave((e) => {
-  interval = setInterval(() => {
-    intervalFn();
-  },3000)
-})
-// 문제
-
-const eventPrevBtn = () => {
-  setTimeout(() => {
-      $(".event_box .gallery_list").css({
-          transition : "none",
-          "margin-left" : 3 * -1250 + "px",
-      });
-      eventSlideCount = 3;
-  },100)
-}
-
-const eventNextBtn = () => {
-  setTimeout(() => {
-      $(".event_box .gallery_list").css({
-          transition : "none",
-          "margin-left" :"0px",
-      });
-      eventSlideCount = 0;
-  },100)
-}
-
-$(".event_box .control_box button").on("click",function (e) { 
-  e.preventDefault();
-  if($(this).hasClass("prev_btn")){
-    eventSlideCount <= 0 ? eventPrevBtn() : eventSlideCount--;
-  }else{
-    eventSlideCount >= 4 ? eventNextBtn() : eventSlideCount++;
-  }
-});
-// 문제 끝
-$(".event_box .dot_list button").on("click", function(){
-  clearInterval(interval);
-  if($(this).parent().index() === 0){
-    eventSlideCount = 1
-  }else if($(this).parent().index() === 1){
-    eventSlideCount = 2
-  }else if($(this).parent().index() === 2){
-    eventSlideCount = 3
-  }
-  eventSlideMove();
-});
 // 이벤트 배너 슬라이드 (E)
 // 라스트 배너 슬라이드 (S)
-let lastSlideCount = 0;
-let lastSlideClone = $(".last_banner .gallery_list > li").eq(0).clone();
 
-
-$(".last_banner .gallery_list").append(lastSlideClone);
-
-const lastSlideMove = () => {
-    $(".last_banner .gallery_list").css({
-        transition : "all ease 0.3s",
-        "margin-left" : lastSlideCount * -410 + "px",
-    })
-    if(lastSlideCount <= 0){
-        $(".last_banner .gallery_list").css({
-            transition : "none",
-        })
-    }else if(lastSlideCount >= 3){
-        $(".last_banner .gallery_list").css({
-            transition : "none",
-        })
-    }
-    if(lastSlideCount === 4){
-        $(".last_banner .count").text(1);
-    }else{
-        $(".last_banner .count").text(lastSlideCount + 1);
-    }
-}
-
-setInterval(() => {
-    lastSlideCount++;
-    lastSlideMove();
-    if(lastSlideCount === 4){
-        setTimeout(() => {
-            $(".last_banner .gallery_list").css({
-                transition : "none",
-                "margin-left" : "0px",
-            })
-            lastSlideCount = 0;
-        },500); 
-    }
-},5000);
-
-
-$(".last_banner .control_box button").on("click",function (e) {  
-  if($(this).hasClass("prev_btn")){
-    if(lastSlideCount <= 0){
-        lastSlideCount = 3 
-    }else{lastSlideCount--;}
-  }else{
-    if(lastSlideCount >= 3){
-        lastSlideCount = 0
-    }else{lastSlideCount++;}
-  }
-  lastSlideMove();
-});
+const lastSwiper = new Swiper('.last_banner > .swiper', {
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  loop: true,
+  loopAdditionalSlides : 1,
+  slidesPerView: 1,
+  centeredSlides: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    type: "fraction",
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+})
 // 라스트 배너 슬라이드 (E)
 // 푸터 addlist (S)
 const firstListOff = () => {

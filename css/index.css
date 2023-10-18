@@ -875,42 +875,24 @@ main .inner .main_content .scroll_box > div > a:hover {
   text-decoration: underline;
 }
 main .inner .main_content .event_box {
-  position: relative;
   width: 100%;
   height: 300px;
   margin: 30px 0;
-}
-main .inner .main_content .event_box .gallery_box {
   border-radius: 25px;
   box-shadow: 1px 1px 12px 0 rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
-main .inner .main_content .event_box .gallery_box .gallery_list {
+main .inner .main_content .event_box .swiper-pagination {
   display: flex;
-}
-main .inner .main_content .event_box .control_box button {
-  position: absolute;
-  top: 130px;
-  width: 20px;
-  height: 38px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-main .inner .main_content .event_box .control_box .prev_btn {
-  left: 25px;
-}
-main .inner .main_content .event_box .control_box .next_btn {
-  right: 25px;
-}
-main .inner .main_content .event_box .dot_list {
-  display: flex;
-  align-items: center;
+  justify-content: end;
   position: absolute;
   top: 23px;
-  right: 20px;
+  padding-right: 30px;
 }
-main .inner .main_content .event_box .dot_list .dot_item button {
+main .inner .main_content .event_box .swiper-pagination .custom_bullet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 24px;
   height: 24px;
   margin: 0 2.5px;
@@ -919,13 +901,28 @@ main .inner .main_content .event_box .dot_list .dot_item button {
   color: #fff;
   background-color: #ddd;
   border-radius: 50%;
-  border: none;
 }
-main .inner .main_content .event_box .dot_list .dot_item .active {
+main .inner .main_content .event_box .swiper-pagination .custom_bullet span {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+main .inner .main_content .event_box .swiper-pagination .swiper-pagination-custom-bullet-active {
   width: 30px;
   height: 30px;
+  margin-top: -3px;
   background-color: #28b2a5;
   border: 1px solid #28b2a5;
+}
+main .inner .main_content .event_box .swiper-button-next {
+  padding-right: 30px;
+}
+main .inner .main_content .event_box .swiper-button-prev {
+  padding-left: 30px;
+}
+main .inner .main_content .event_box .swiper-button-next::after,
+main .inner .main_content .event_box .swiper-button-prev::after {
+  display: none;
 }
 main .inner .num_box {
   display: flex;
@@ -1065,14 +1062,10 @@ main .inner .num_box > ul .right_box dl dd {
   letter-spacing: -0.025em;
 }
 main .inner .num_box .last_banner {
-  position: relative;
   width: 410px;
   height: 300px;
   overflow: hidden;
   border-radius: 25px;
-}
-main .inner .num_box .last_banner .gallery_list {
-  display: flex;
 }
 main .inner .num_box .last_banner .control_box {
   display: flex;
@@ -1086,23 +1079,42 @@ main .inner .num_box .last_banner .control_box {
   padding: 0 10px;
   background-color: rgba(17, 17, 17, 0.3);
   border-radius: 50px;
+  z-index: 1;
 }
-main .inner .num_box .last_banner .control_box button {
-  width: 5px;
-  background-color: transparent;
-  border: none;
+main .inner .num_box .last_banner .swiper-button-next {
+  position: absolute;
+  top: 22px;
+  right: 0;
+  height: 24px;
 }
-main .inner .num_box .last_banner .control_box button img {
-  width: 100%;
-}
-main .inner .num_box .last_banner .control_box .counter {
-  margin: 0 10px;
+main .inner .num_box .last_banner .swiper-pagination {
+  position: absolute;
+  top: 4px;
+  left: 28px;
+  width: 26px;
   color: #fff;
   font-size: 1.4rem;
   font-weight: 700;
 }
-main .inner .num_box .last_banner .control_box .counter .count {
+main .inner .num_box .last_banner .swiper-pagination .swiper-pagination-current {
   color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+main .inner .num_box .last_banner .swiper-pagination .swiper-pagination-total {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+main .inner .num_box .last_banner .swiper-button-prev {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  height: 24px;
+}
+main .inner .num_box .last_banner .swiper-button-next::after,
+main .inner .num_box .last_banner .swiper-button-prev::after {
+  display: none;
 }
 
 footer {

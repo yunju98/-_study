@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -1049,22 +1051,16 @@
                     </article>
                     <!---------  event banner slider  --------->
                     <article class="event_box">
-                        <div class="gallery_box">
-                            <ul class="gallery_list">
-                                <li><a href="#"><img src="./assets/img/main_banner_04.jpg" alt="원더카드T 이벤트 이미지"></a></li>
-                                <li><a href="#"><img src="./assets/img/main_banner_202307.jpg" alt="3만캐시백 이미지"></a></li>
-                                <li><a href="#"><img src="./assets/img/main_banner_202307_AUTO.jpg" alt="aut카드 이벤트 이미지"></a></li>
-                            </ul>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><a href="#"><img src="./assets/img/main_banner_04.jpg" alt="원더카드T 이벤트 이미지"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="./assets/img/main_banner_202307.jpg" alt="3만캐시백 이미지"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="./assets/img/main_banner_202307_AUTO.jpg" alt="aut카드 이벤트 이미지"></a></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"><img src="./assets/img/event_arr_prev.png" alt="이벤트 배너 이전 화살표 아이콘"></div>
+                            <div class="swiper-button-next"><img src="./assets/img/event_arr_next.png" alt="이벤트 배너 다음 화살표 아이콘"></div>
                         </div>
-                        <div class="control_box">
-                            <button class="prev_btn"><img src="./assets/img/event_arr_prev.png" alt="이벤트 배너 이전 화살표 아이콘"></button>
-                            <button class="next_btn"><img src="./assets/img/event_arr_next.png" alt="이벤트 배너 다음 화살표 아이콘"></button>
-                        </div>
-                        <ul class="dot_list">
-                            <li class="dot_item"><button class="active">01</button></li>
-                            <li class="dot_item"><button>02</button></li>
-                            <li class="dot_item"><button>03</button></li>
-                        </ul>
                     </article>
                 </section>
                 <!---------  number box  --------->
@@ -1104,19 +1100,18 @@
                         </li>
                     </ul>
                     <div class="last_banner">
-                        <ul class="gallery_list">
-                            <li><img src="./assets/img/banner1_.jpg" alt="원데이 자동차 보험 이미지"></li>
-                            <li><img src="./assets/img/banner2_.jpg" alt="자동차보험 나눔특약 이미지"></li>
-                            <li><img src="./assets/img/banner3_.jpg" alt="수화보험상담"></li>
-                            <li><img src="./assets/img/banner4_.jpg" alt="예다함상조 이미지"></li>
-                        </ul>
-                        <div class="control_box">
-                            <button class="prev_btn"><img src="./assets/img/btm_arr_prev.png" alt="btm 이전 화살표 아이콘"></button>
-                            <span class="counter">
-                                <span class="count">1</span>
-                                / 4
-                            </span>
-                            <button class="next_btn"><img src="./assets/img/btm_arr_next.png" alt="btm 다음 화살표 아이콘"></button>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="./assets/img/banner1_.jpg" alt="원데이 자동차 보험 이미지"></div>
+                                <div class="swiper-slide"><img src="./assets/img/banner2_.jpg" alt="자동차보험 나눔특약 이미지"></div>
+                                <div class="swiper-slide"><img src="./assets/img/banner3_.jpg" alt="수화보험상담"></div>
+                                <div class="swiper-slide"><img src="./assets/img/banner4_.jpg" alt="예다함상조 이미지"></div>
+                            </div>
+                            <div class="control_box">
+                                <div class="swiper-button-prev"><img src="./assets/img/btm_arr_prev.png" alt="btm 이전 화살표 아이콘"></div>
+                                <div class="swiper-pagination"></div>
+                                <div class="swiper-button-next"><img src="./assets/img/btm_arr_next.png" alt="btm 다음 화살표 아이콘"></div>
+                            </div>
                         </div>
                     </div>
                 </section>
