@@ -470,76 +470,56 @@ main{
   .inner{
     //----------------------메인배너 (S)----------------------
     .main_banner{
-      position: relative;
+      height: 500px;
       margin-top: 10px;
-      .gallery_box{
+      .swiper-slide{
         height: 450px;
-        overflow: hidden;
-        .gallery_item{
+        > a{
           position: absolute;
-          top: 0;
-          left: 0;
-          > a{
-            position: absolute;
-            top: 49.5%;
-            border-radius: 30px;
-            width: 13.84%;
-            height: 10.22%;
-            margin-right: 10px;
-            &:hover{
-              background-color: #333;
-              opacity: 0.08;
-            }
+          top: 49.5%;
+          border-radius: 30px;
+          width: 13.84%;
+          height: 10.22%;
+          margin-right: 10px;
+          &:hover{
+            background-color: #333;
+            opacity: 0.08;
           }
-          .banner_btn1{
-            left: 12.8%;
-          }
-          .banner_btn2{
-            left: 27.45%;
-          }
-          .banner_btn3{
-            left: 12.8%;
-          }
+        }
+        > .banner_btn1{
+          left: 12.8%;
+        }
+        > .banner_btn2{
+          left: 27.45%;
+        }
+        > .banner_btn3{
+          left: 12.8%;
         }
       }
-      .control_box{
-        button{
-          position: absolute;
-          top: calc(50% - 40px);
-          width: 2.64%;
-          height: 11.32%;
-          border: none;
-          background-color: transparent;
-          cursor: pointer;
-        }
-        .prev_btn{
-          left: 30px;
-        }
-        .next_btn{
-          right: 30px;
-        }
-      }
-      .dot_list{
-        display: flex;
-        justify-content: center;
-        margin-top: 16px;
-        cursor: pointer;
-        .dot_item{
+      .swiper-pagination{
+        position: unset;
+        margin-top: 25px;
+        .swiper-pagination-bullet {
           width: 10px;
           height: 10px;
           margin: 0 3px;
-          transition: opacity .2s ease;
           background-color: #ccc;
           border-radius: 30px;
-          button{
-            background-color: transparent;
-            border: none;
-          }
         }
-        .blue{
+        .swiper-pagination-bullet-active {
           background-color: #35c7be;
-          width: 30px;
+          width: 30px;   
         }
+      }
+      .swiper-button-next{
+        padding-right: 30px;
+      }
+      .swiper-button-prev{
+        padding-left: 30px;
+      }
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        display: none;
       }
     }
     //----------------------메인배너 (E)----------------------
@@ -624,6 +604,7 @@ main{
         }
       }
       .menu01{
+        margin-bottom: 40px;
         a{
           &::before{
             content: "";

@@ -461,19 +461,13 @@ header .inner nav .active {
 }
 
 main .inner .main_banner {
-  position: relative;
+  height: 500px;
   margin-top: 10px;
 }
-main .inner .main_banner .gallery_box {
+main .inner .main_banner .swiper-slide {
   height: 450px;
-  overflow: hidden;
 }
-main .inner .main_banner .gallery_box .gallery_item {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-main .inner .main_banner .gallery_box .gallery_item > a {
+main .inner .main_banner .swiper-slide > a {
   position: absolute;
   top: 49.5%;
   border-radius: 30px;
@@ -481,55 +475,43 @@ main .inner .main_banner .gallery_box .gallery_item > a {
   height: 10.22%;
   margin-right: 10px;
 }
-main .inner .main_banner .gallery_box .gallery_item > a:hover {
+main .inner .main_banner .swiper-slide > a:hover {
   background-color: #333;
   opacity: 0.08;
 }
-main .inner .main_banner .gallery_box .gallery_item .banner_btn1 {
+main .inner .main_banner .swiper-slide > .banner_btn1 {
   left: 12.8%;
 }
-main .inner .main_banner .gallery_box .gallery_item .banner_btn2 {
+main .inner .main_banner .swiper-slide > .banner_btn2 {
   left: 27.45%;
 }
-main .inner .main_banner .gallery_box .gallery_item .banner_btn3 {
+main .inner .main_banner .swiper-slide > .banner_btn3 {
   left: 12.8%;
 }
-main .inner .main_banner .control_box button {
-  position: absolute;
-  top: calc(50% - 40px);
-  width: 2.64%;
-  height: 11.32%;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
+main .inner .main_banner .swiper-pagination {
+  position: unset;
+  margin-top: 25px;
 }
-main .inner .main_banner .control_box .prev_btn {
-  left: 30px;
-}
-main .inner .main_banner .control_box .next_btn {
-  right: 30px;
-}
-main .inner .main_banner .dot_list {
-  display: flex;
-  justify-content: center;
-  margin-top: 16px;
-  cursor: pointer;
-}
-main .inner .main_banner .dot_list .dot_item {
+main .inner .main_banner .swiper-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
   margin: 0 3px;
-  transition: opacity 0.2s ease;
   background-color: #ccc;
   border-radius: 30px;
 }
-main .inner .main_banner .dot_list .dot_item button {
-  background-color: transparent;
-  border: none;
-}
-main .inner .main_banner .dot_list .blue {
+main .inner .main_banner .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #35c7be;
   width: 30px;
+}
+main .inner .main_banner .swiper-button-next {
+  padding-right: 30px;
+}
+main .inner .main_banner .swiper-button-prev {
+  padding-left: 30px;
+}
+main .inner .main_banner .swiper-button-next::after,
+main .inner .main_banner .swiper-button-prev::after {
+  display: none;
 }
 main .inner .quick_menu {
   margin: 37px 0 40px;
@@ -610,6 +592,9 @@ main .inner .quick_menu article > ul > li .helf_item7 {
 }
 main .inner .quick_menu article > ul > li .helf_item8 {
   background-position-x: -560px;
+}
+main .inner .quick_menu .menu01 {
+  margin-bottom: 40px;
 }
 main .inner .quick_menu .menu01 a::before {
   content: "";

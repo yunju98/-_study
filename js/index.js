@@ -73,28 +73,27 @@ $(".all_menu_list > li > a").click(function() {
   $(".menu_depth div").eq(listNum).addClass("active");
 })
 // all_nav_menu 팝업창 (E)
-// 메인배너 슬라이더 포깈ㅋㅋㅋㅋㅋㅋㅋㅋㅋ
-let mainSlideCount = 0;
-
-const mainSlideMove = () => {
-  $(".main_banner .gallery_item").eq(mainSlideCount).fadeOut(1000).next().fadeIn(1000).end().appendTo(".main_banner .gallery_box");
-
-  $(".main_banner .dot_list li").removeClass("blue").eq(mainSlideCount).addClass("blue")
-}
-
-mainSlideMove();
-
-$(".main_banner > .gallery_box > .gallery_item:gt(0)").hide();
-
-setInterval(function() {
-  mainSlideMove();
-}, 6000)
-
-// $(".main_banner .dot_list li button").on("click", function(){
-//   mainSlideCount = $(this).parent().index();
-//   mainSlideMove();
-// });
-// 메인배너 슬라이더 포깈ㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+// 메인배너 슬라이더
+const swiper = new Swiper('.main_banner > .swiper', {
+  autoplay: {
+    delay: 6000,
+    disableOnInteraction: false,
+  },
+  effect : 'fade',
+  loop: true,
+  loopAdditionalSlides : 1,
+  // slidesPerView: 1,
+  // centeredSlides: true,
+  pagination: {
+    el: '.swiper-pagination',
+    // clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+})
+// 메인배너 슬라이더
 // 스크롤박스 (S)
 let scrollNum = 0;
 let noticeItemClone = $(".notice .scroll_list > li").eq(0).clone();
@@ -121,7 +120,7 @@ setInterval(() => {
 // 스크롤박스 (E)
 // 이벤트 배너 슬라이드(S)
 let bullet = ["01","02","03"];
-const swiper = new Swiper('.event_box > .swiper', {
+const eventSwiper = new Swiper('.event_box > .swiper', {
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
