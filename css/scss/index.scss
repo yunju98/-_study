@@ -1,4 +1,5 @@
 @import "common";
+@import "font";
 
 .inner{
   width: 1250px;
@@ -82,16 +83,16 @@ header{
             }
           }
           .direct_type1{
-            background-image: url(../../assets/img/icon_go1.png); 
+            background-image: url(../assets/img/icon_go1.png); 
           }
           .direct_type2{
-            background-image: url(../../assets/img/icon_go2.png); 
+            background-image: url(../assets/img/icon_go2.png); 
           }
           .direct_type3{
-            background-image: url(../../assets/img/icon_go3.png); 
+            background-image: url(../assets/img/icon_go3.png); 
           }
           .direct_type4{
-            background-image: url(../../assets/img/icon_go5.png); 
+            background-image: url(../assets/img/icon_go5.png); 
           }
           // ------다이렉트보험 클릭시 팝업창 (E)-----
         }
@@ -167,19 +168,19 @@ header{
                 }
               }
               .dropdown_img1{
-                background-image: url(../../assets/img/img_navBg1.jpg);
+                background-image: url(../assets/img/img_navBg1.jpg);
               }
               .dropdown_img2{
-                background-image: url(../../assets/img/img_navBg2.jpg);
+                background-image: url(../assets/img/img_navBg2.jpg);
               }
               .dropdown_img3{
-                background-image: url(../../assets/img/img_navBg3.jpg);
+                background-image: url(../assets/img/img_navBg3.jpg);
               }
               .dropdown_img4{
-                background-image: url(../../assets/img/img_navBg4.jpg);
+                background-image: url(../assets/img/img_navBg4.jpg);
               }
               .dropdown_img5{
-                background-image: url(../../assets/img/img_navBg5.jpg);
+                background-image: url(../assets/img/img_navBg5.jpg);
               }
               .depth2{
                 display: flex;
@@ -285,7 +286,7 @@ header{
                   width: 70px;
                   height: 70px;
                   border: none;
-                  background: transparent url(../../assets/img/main_search.png) no-repeat right 30px center/ 30px;
+                  background: transparent url(../assets/img/main_search.png) no-repeat right 30px center/ 30px;
                 }
               }
             }
@@ -570,7 +571,7 @@ main{
               padding-top: 100px;
               font-size: 1.6rem;
               font-weight: 500;
-              background: url(../../assets/img/main_quick_ul_1.png) no-repeat left top/640px 80px;
+              background: url(../assets/img/main_quick_ul_1.png) no-repeat left top/640px 80px;
               transition: all 0.2s ease;
               letter-spacing: -0.08em;
               text-align: center;
@@ -647,51 +648,51 @@ main{
         position: relative;
         li{
           width: 90px;
-          background: url(../../assets/img/main_icon_bg.png) no-repeat left bottom 34px/90px 54px;
+          background: url(../assets/img/main_icon_bg.png) no-repeat left bottom 34px/90px 54px;
           .find_item1{
-            background: url(../../assets/img/main_icon_01.png) no-repeat center top 15px;
+            background: url(../assets/img/main_icon_01.png) no-repeat center top 15px;
             &:hover{
               background-position: left bottom 38px;
             }
           }
           .find_item2{
-            background: url(../../assets/img/main_icon_02.png) no-repeat center top 19px;
+            background: url(../assets/img/main_icon_02.png) no-repeat center top 19px;
             &:hover{
               background-position: center top 9px;
             }
           }
           .find_item3{
-            background: url(../../assets/img/main_icon_03.png) no-repeat center top 10px;
+            background: url(../assets/img/main_icon_03.png) no-repeat center top 10px;
             &:hover{
               background-position: center top 5px;
             }
           }
           .find_item4{
-            background: url(../../assets/img/main_icon_04.png) no-repeat center top 4px;
+            background: url(../assets/img/main_icon_04.png) no-repeat center top 4px;
             &:hover{
               background-position: center top -1px;
             }
           }
           .find_item5{
-            background: url(../../assets/img/main_icon_05.png) no-repeat center top 6px;
+            background: url(../assets/img/main_icon_05.png) no-repeat center top 6px;
             &:hover{
               background-position: center top 1px;
             }
           }
           .find_item6{
-            background: url(../../assets/img/main_icon_06.png) no-repeat center top 3px;
+            background: url(../assets/img/main_icon_06.png) no-repeat center top 3px;
             &:hover{
               background-position: left 10px bottom 45px;
             }
           }
           .find_item7{
-            background: url(../../assets/img/main_icon_07.png) no-repeat center top 14px;
+            background: url(../assets/img/main_icon_07.png) no-repeat center top 14px;
             &:hover{
               background-position: center top 9px;
             }
           }
           .find_item8{
-            background: url(../../assets/img/main_icon_08.png) no-repeat center top 6px;
+            background: url(../assets/img/main_icon_08.png) no-repeat center top 6px;
             &:hover{
               background-position: center top 1px;
             }
@@ -718,7 +719,7 @@ main{
             height: 120px;
             &:first-child{
               a{
-                background-image: url(../../assets/img/main_quick_ul_3_1.png);
+                background-image: url(../assets/img/main_quick_ul_3_1.png);
                 background-position: right 38px center;
                 border-right: 2px solid #eaeaea;
               }
@@ -733,7 +734,7 @@ main{
               font-weight: 500;
               line-height: 25px;
               letter-spacing: -0.08em;
-              background: url(../../assets/img/main_quick_ul_3_2.png) no-repeat right  center/ 120px;
+              background: url(../assets/img/main_quick_ul_3_2.png) no-repeat right  center/ 120px;
               &:hover{
                 color: #009591;
               }
@@ -752,7 +753,7 @@ main{
                 font-size: 1.4rem;
                 color: #009591;
                 border-bottom: 1px solid #009591;
-                background: url(../../assets/img/btn_arrow_R_g.png) no-repeat right top 5px/ 5px 9px;
+                background: url(../assets/img/btn_arrow_R_g.png) no-repeat right top 5px/ 5px 9px;
                 line-height: 17px;
                 letter-spacing: -0.05em;
               }
@@ -784,14 +785,14 @@ main{
               font-weight: 500;
               color: #333;
               letter-spacing: -0.08em;
-              background: url(../../assets/img/main_link_arr.png) no-repeat right top 33px/ 7px 12px;
+              background: url(../assets/img/main_link_arr.png) no-repeat right top 33px/ 7px 12px;
               &::before{
                 content: "";
                 display: block;
                 width: 29px;
                 height: 76px;
                 padding-right: 5px;
-                background: url(../../assets/img/main_quick_ul_4.png) no-repeat left center/124px 31px;
+                background: url(../assets/img/main_quick_ul_4.png) no-repeat left center/124px 31px;
               }
               &:hover{
                 color: #009591;
@@ -998,7 +999,7 @@ main{
             padding: 18px 0 17px 90px;
             font-size: 1.5rem;
             color: #555;
-            background: #f9f9fb url(../../assets/img/icon_dots.png) no-repeat left 20px center;
+            background: #f9f9fb url(../assets/img/icon_dots.png) no-repeat left 20px center;
             border-radius: 10px;
             letter-spacing: -0.08em;
             span{
@@ -1016,7 +1017,7 @@ main{
               right: 40px;
               width: 30px;
               height: 30px;
-              background: url(../../assets/img/img_golink.png) no-repeat;
+              background: url(../assets/img/img_golink.png) no-repeat;
             }
           }
           .btn_ars{
@@ -1031,7 +1032,7 @@ main{
             font-weight: 400;
             color: #fff;
             border-radius: 10px;
-            background: #009591 url(../../assets/img/ico_arr_w.png) no-repeat right 10px center/ 5px;
+            background: #009591 url(../assets/img/ico_arr_w.png) no-repeat right 10px center/ 5px;
             text-align: center;
             line-height: 1.3;
             letter-spacing: -0.025em;
