@@ -72,12 +72,14 @@ header .inner .sub_nav > li a:hover {
 header .inner .sub_nav .direct_box {
   margin: 0 5px 0 30px;
 }
-header .inner .sub_nav .direct_box button {
-  display: flex;
-  align-items: center;
-  position: relative;
+header .inner .sub_nav .direct_box .direct_btn {
+  width: 159px;
+  height: 28px;
   border: none;
-  background: transparent;
+  background: transparent url(../assets/img/btn_cal_off_blue.png);
+}
+header .inner .sub_nav .direct_box .on {
+  background-image: url(../assets/img/btn_cal_on_blue.png);
 }
 header .inner .sub_nav .direct_box ul {
   display: none;
@@ -88,7 +90,6 @@ header .inner .sub_nav .direct_box ul {
   padding: 11px 15px 10px;
   border: 2px solid #009090;
   background-color: #fff;
-  z-index: 2000;
 }
 header .inner .sub_nav .direct_box ul > li {
   padding: 19px 20px 20px 85px;
@@ -125,8 +126,10 @@ header .inner .sub_nav .direct_box ul .direct_type3 {
 header .inner .sub_nav .direct_box ul .direct_type4 {
   background-image: url(../assets/img/icon_go5.png);
 }
-header .inner .sub_nav .direct_box .active {
+header .inner .sub_nav .direct_box > .active {
   display: block;
+}
+header .inner .sub_nav .active {
   z-index: 2000;
 }
 header .inner nav {
@@ -1286,16 +1289,24 @@ footer .inner .footer_award {
   margin-top: 35px;
 }
 
+body {
+  position: relative;
+}
 body > span {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
-body .active {
+body > .active {
   display: block;
+}
+
+.scrollLock {
+  padding-right: 0.7%;
+  overflow: hidden;
 }
